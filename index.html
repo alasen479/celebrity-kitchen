@@ -259,6 +259,57 @@ section{padding:96px 5%}
 .coaching-cta-box{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);padding:36px;margin-top:40px}
 .coaching-cta-box h3{color:#FAF8F3;font-size:22px;margin-bottom:12px}
 .coaching-cta-box p{color:rgba(250,248,243,.6);font-size:14px;margin-bottom:24px;line-height:1.7}
+
+/* ── CALENDAR BOOKING ── */
+.cal-wrap{margin-top:24px;background:rgba(0,0,0,.2);border:1px solid rgba(201,168,76,.15);padding:20px}
+.cal-step{}
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.cal-month-label{color:#FAF8F3;font-family:'Playfair Display',serif;font-size:16px;font-weight:500}
+.cal-nav{background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.25);color:var(--gold);width:32px;height:32px;cursor:pointer;font-size:14px;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.cal-nav:hover{background:rgba(201,168,76,.3)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px}
+.cal-day-name{text-align:center;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(250,248,243,.35);padding:6px 0}
+.cal-day{text-align:center;padding:9px 4px;font-size:13px;cursor:pointer;color:rgba(250,248,243,.7);transition:all .2s;border:1px solid transparent;border-radius:2px;position:relative}
+.cal-day:hover:not(.cal-day-empty):not(.cal-day-past){background:rgba(201,168,76,.2);border-color:rgba(201,168,76,.4);color:#FAF8F3}
+.cal-day.cal-day-selected{background:var(--gold);color:var(--dark);font-weight:600;border-color:var(--gold)}
+.cal-day.cal-day-past{color:rgba(250,248,243,.2);cursor:default}
+.cal-day.cal-day-empty{cursor:default}
+.cal-day.cal-day-today{border-color:rgba(201,168,76,.4)}
+.cal-day.cal-day-today::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:var(--gold);border-radius:50%}
+.cal-back-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.cal-back{background:transparent;border:1px solid rgba(201,168,76,.3);color:var(--gold);padding:6px 14px;font-size:11px;letter-spacing:1px;cursor:pointer;font-family:'Jost',sans-serif;transition:all .2s}
+.cal-back:hover{background:rgba(201,168,76,.15)}
+.cal-chosen-date{font-size:12px;color:var(--gold-light);letter-spacing:.5px}
+.cal-pick-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(250,248,243,.4);margin-bottom:12px}
+.time-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.time-slot{padding:10px 6px;text-align:center;font-size:12px;border:1px solid rgba(201,168,76,.2);color:rgba(250,248,243,.7);cursor:pointer;transition:all .2s;background:rgba(0,0,0,.15);letter-spacing:.3px}
+.time-slot:hover{border-color:var(--gold);color:#FAF8F3;background:rgba(201,168,76,.15)}
+.time-slot.selected{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:600}
+.cal-form{display:flex;flex-direction:column;gap:10px}
+.cal-form input,.cal-form select,.cal-form textarea{background:rgba(0,0,0,.25);border:1px solid rgba(201,168,76,.2);color:#FAF8F3;padding:11px 14px;font-size:13px;font-family:'Jost',sans-serif;outline:none;transition:border-color .2s;width:100%}
+.cal-form input::placeholder,.cal-form textarea::placeholder{color:rgba(250,248,243,.3)}
+.cal-form select{color:rgba(250,248,243,.7);-webkit-appearance:none;appearance:none}
+.cal-form select option{background:var(--charcoal);color:#FAF8F3}
+.cal-form input:focus,.cal-form select:focus,.cal-form textarea:focus{border-color:var(--gold)}
+.cal-form textarea{resize:none}
+.cal-submit-btn{background:var(--gold);color:var(--dark);border:none;padding:14px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;cursor:pointer;font-family:'Jost',sans-serif;transition:all .2s;margin-top:4px}
+.cal-submit-btn:hover{background:var(--gold-light)}
+.cal-note{font-size:11px;color:rgba(250,248,243,.35);text-align:center;margin-top:4px!important;margin-bottom:0!important}
+.cal-confirm{text-align:center;padding:20px 0}
+.cal-confirm-icon{width:56px;height:56px;background:rgba(201,168,76,.2);border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--gold);margin:0 auto 16px}
+.cal-confirm h4{color:#FAF8F3;font-family:'Playfair Display',serif;font-size:20px;margin-bottom:10px}
+.cal-confirm p{color:rgba(250,248,243,.65);font-size:14px;margin-bottom:6px!important}
+.cal-confirm-sub{font-size:12px!important;color:rgba(250,248,243,.4)!important}
+@media(max-width:768px){
+  .time-grid{grid-template-columns:repeat(2,1fr)}
+  .cal-wrap{padding:16px}
+  .cal-day{padding:8px 2px;font-size:12px}
+  .coaching-cta-box{padding:20px}
+}
+@media(max-width:480px){
+  .time-grid{grid-template-columns:repeat(2,1fr)}
+  .coaching-cta-box{padding:18px 16px}
+}
 .formats{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:28px}
 .format-badge{background:rgba(255,255,255,.06);color:rgba(250,248,243,.7);padding:6px 14px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
 
@@ -1095,14 +1146,90 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.15);padding:
           <span class="who-chip">Anyone Monetizing Food</span>
         </div>
         <div class="coaching-cta-box">
-          <h3>Coaching That Works Around You</h3>
-          <p>Sessions available via phone, video call, or in-person in the Dallas area. Single strategy sessions, multi-session packages, and ongoing monthly coaching available.</p>
+          <h3>Book Your Coaching Session</h3>
+          <p>Select your preferred date and time below. We'll confirm your session within 24 hours.</p>
           <div class="formats">
             <span class="format-badge">📞 Phone</span>
             <span class="format-badge">💻 Video Call</span>
             <span class="format-badge">🤝 In-Person (DFW)</span>
           </div>
-          <a href="#contact" class="btn-primary">Book a Coaching Session</a>
+
+          <!-- CALENDAR BOOKING TOOL -->
+          <div class="cal-wrap" id="calWrap">
+
+            <!-- Step 1: Pick a date -->
+            <div class="cal-step" id="calStep1">
+              <div class="cal-header">
+                <button class="cal-nav" onclick="changeMonth(-1)">&#8592;</button>
+                <span class="cal-month-label" id="calMonthLabel"></span>
+                <button class="cal-nav" onclick="changeMonth(1)">&#8594;</button>
+              </div>
+              <div class="cal-grid">
+                <div class="cal-day-name">Su</div>
+                <div class="cal-day-name">Mo</div>
+                <div class="cal-day-name">Tu</div>
+                <div class="cal-day-name">We</div>
+                <div class="cal-day-name">Th</div>
+                <div class="cal-day-name">Fr</div>
+                <div class="cal-day-name">Sa</div>
+              </div>
+              <div class="cal-grid" id="calDays"></div>
+            </div>
+
+            <!-- Step 2: Pick a time -->
+            <div class="cal-step" id="calStep2" style="display:none">
+              <div class="cal-back-row">
+                <button class="cal-back" onclick="backToCalendar()">&#8592; Change Date</button>
+                <span class="cal-chosen-date" id="calChosenDate"></span>
+              </div>
+              <p class="cal-pick-label">Select a time slot:</p>
+              <div class="time-grid" id="timeGrid"></div>
+            </div>
+
+            <!-- Step 3: Your details -->
+            <div class="cal-step" id="calStep3" style="display:none">
+              <div class="cal-back-row">
+                <button class="cal-back" onclick="backToTimes()">&#8592; Change Time</button>
+                <span class="cal-chosen-date" id="calChosenDateTime"></span>
+              </div>
+              <p class="cal-pick-label">Your details:</p>
+              <div class="cal-form">
+                <input type="text" id="calName" placeholder="Full Name" />
+                <input type="tel" id="calPhone" placeholder="Phone Number" />
+                <input type="email" id="calEmail" placeholder="Email Address" />
+                <select id="calFormat">
+                  <option value="">Preferred Session Format</option>
+                  <option>📞 Phone Call</option>
+                  <option>💻 Video Call (Zoom / Google Meet)</option>
+                  <option>🤝 In-Person — Dallas Area</option>
+                </select>
+                <select id="calTopic">
+                  <option value="">Main Topic (optional)</option>
+                  <option>Catering Business Setup</option>
+                  <option>DoorDash / Uber Eats Strategy</option>
+                  <option>Restaurant Business</option>
+                  <option>Food Business Operations</option>
+                  <option>Pricing & Packages</option>
+                  <option>Other / Not Sure Yet</option>
+                </select>
+                <textarea id="calNote" placeholder="Anything you'd like us to know before the session? (optional)" rows="3"></textarea>
+                <button class="cal-submit-btn" onclick="submitBooking()">Confirm Booking Request →</button>
+                <p class="cal-note">We'll confirm your session within 24 hours via phone or email.</p>
+              </div>
+            </div>
+
+            <!-- Step 4: Confirmation -->
+            <div class="cal-step" id="calStep4" style="display:none">
+              <div class="cal-confirm">
+                <div class="cal-confirm-icon">✓</div>
+                <h4>Booking Request Sent!</h4>
+                <p id="calConfirmText"></p>
+                <p class="cal-confirm-sub">We'll reach out within 24 hours to confirm. Check your phone and email.</p>
+                <button class="cal-back" onclick="resetBooking()" style="margin-top:16px">Book Another Session</button>
+              </div>
+            </div>
+
+          </div><!-- /cal-wrap -->
         </div>
       </div>
       <div class="topics">
@@ -1500,11 +1627,138 @@ function submitBundle(){
   document.getElementById('bundleConfirm').style.display='block';
 }
 
+// ── COACHING CALENDAR ──
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const TIME_SLOTS = ['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM','1:00 PM','1:30 PM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM','5:00 PM'];
+
+let calDate = new Date();
+calDate.setDate(1);
+let selectedDate = null;
+let selectedTime = null;
+
+function renderCalendar() {
+  const today = new Date();
+  const year = calDate.getFullYear();
+  const month = calDate.getMonth();
+  document.getElementById('calMonthLabel').textContent = MONTHS[month] + ' ' + year;
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const grid = document.getElementById('calDays');
+  grid.innerHTML = '';
+  for (let i = 0; i < firstDay; i++) {
+    const empty = document.createElement('div');
+    empty.className = 'cal-day cal-day-empty';
+    grid.appendChild(empty);
+  }
+  for (let d = 1; d <= daysInMonth; d++) {
+    const dayEl = document.createElement('div');
+    dayEl.className = 'cal-day';
+    dayEl.textContent = d;
+    const thisDate = new Date(year, month, d);
+    const isPast = thisDate < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const isSunday = thisDate.getDay() === 0;
+    const isToday = thisDate.toDateString() === today.toDateString();
+    if (isPast || isSunday) {
+      dayEl.classList.add('cal-day-past');
+    } else {
+      if (isToday) dayEl.classList.add('cal-day-today');
+      if (selectedDate && thisDate.toDateString() === selectedDate.toDateString()) dayEl.classList.add('cal-day-selected');
+      dayEl.onclick = () => selectDate(thisDate);
+    }
+    grid.appendChild(dayEl);
+  }
+}
+
+function selectDate(date) {
+  selectedDate = date;
+  renderCalendar();
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const label = days[date.getDay()] + ', ' + MONTHS[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+  document.getElementById('calChosenDate').textContent = label;
+  document.getElementById('calStep1').style.display = 'none';
+  const tg = document.getElementById('timeGrid');
+  tg.innerHTML = '';
+  TIME_SLOTS.forEach(t => {
+    const slot = document.createElement('div');
+    slot.className = 'time-slot';
+    slot.textContent = t;
+    slot.onclick = () => selectTime(t, slot);
+    tg.appendChild(slot);
+  });
+  document.getElementById('calStep2').style.display = 'block';
+}
+
+function selectTime(time, el) {
+  selectedTime = time;
+  document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+  setTimeout(() => {
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const label = days[selectedDate.getDay()] + ', ' + MONTHS[selectedDate.getMonth()] + ' ' + selectedDate.getDate() + ' · ' + time;
+    document.getElementById('calChosenDateTime').textContent = label;
+    document.getElementById('calStep2').style.display = 'none';
+    document.getElementById('calStep3').style.display = 'block';
+  }, 200);
+}
+
+function backToCalendar() {
+  document.getElementById('calStep2').style.display = 'none';
+  document.getElementById('calStep1').style.display = 'block';
+}
+
+function backToTimes() {
+  document.getElementById('calStep3').style.display = 'none';
+  document.getElementById('calStep2').style.display = 'block';
+}
+
+function submitBooking() {
+  const name = document.getElementById('calName').value.trim();
+  const phone = document.getElementById('calPhone').value.trim();
+  const email = document.getElementById('calEmail').value.trim();
+  const format = document.getElementById('calFormat').value;
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const dateLabel = days[selectedDate.getDay()] + ', ' + MONTHS[selectedDate.getMonth()] + ' ' + selectedDate.getDate() + ', ' + selectedDate.getFullYear();
+  document.getElementById('calConfirmText').textContent =
+    name + ', your session request for ' + dateLabel + ' at ' + selectedTime + (format ? ' via ' + format.replace(/^[^\s]+ /,'') : '') + ' has been received.';
+  document.getElementById('calStep3').style.display = 'none';
+  document.getElementById('calStep4').style.display = 'block';
+}
+
+function resetBooking() {
+  selectedDate = null;
+  selectedTime = null;
+  document.getElementById('calStep4').style.display = 'none';
+  document.getElementById('calStep3').style.display = 'none';
+  document.getElementById('calStep2').style.display = 'none';
+  document.getElementById('calStep1').style.display = 'block';
+  document.getElementById('calName').value = '';
+  document.getElementById('calPhone').value = '';
+  document.getElementById('calEmail').value = '';
+  document.getElementById('calFormat').value = '';
+  document.getElementById('calTopic').value = '';
+  document.getElementById('calNote').value = '';
+  renderCalendar();
+}
+
+function changeMonth(dir) {
+  calDate.setMonth(calDate.getMonth() + dir);
+  const today = new Date();
+  if (calDate.getFullYear() < today.getFullYear() || (calDate.getFullYear() === today.getFullYear() && calDate.getMonth() < today.getMonth())) {
+    calDate = new Date(today.getFullYear(), today.getMonth(), 1);
+  }
+  renderCalendar();
+}
+
+// Init calendar on page load
+document.addEventListener('DOMContentLoaded', renderCalendar);
+
 function submitContact(e){
   e.preventDefault();
   document.getElementById('contactForm').style.display='none';
   document.getElementById('contactConfirm').style.display='block';
 }
+
 </script>
 </body>
 </html>
