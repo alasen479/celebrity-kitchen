@@ -386,33 +386,162 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.15);padding:
 @media(max-width:900px){
   .about-grid,.cf-grid,.airbnb-grid,.coaching-grid,.contact-grid{grid-template-columns:1fr}
   .about-accent{display:none}
-  .cf-img{min-height:300px}
+  .cf-img{min-height:280px}
+  .cf-content{padding:48px 40px}
   .testi-grid{grid-template-columns:1fr}
   .bundle-grid{grid-template-columns:1fr 1fr}
-  .airbnb-cards{grid-template-columns:1fr}
+  .airbnb-cards{grid-template-columns:1fr 1fr}
+  .coaching-grid{gap:40px}
+  .about-strip{padding:64px 5%}
+  .contact-strip{padding:64px 5%}
 }
 @media(max-width:768px){
+  /* Nav */
   nav .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
-  .hero h1{font-size:42px}
-  .services-grid{grid-template-columns:1fr}
-  .bundle-grid{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr 1fr}
-  .trust-inner{gap:0}
-  .trust-item{padding:6px 16px;font-size:10px}
-  section{padding:72px 5%}
-  .footer-grid{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;text-align:center}
-  body{padding-bottom:70px}
-  .photo-strip-inner{grid-template-columns:repeat(3,1fr);height:160px}
+  .nav-logo img{height:40px}
+  .nav-logo-text .name{font-size:16px}
+  .nav-logo-text .tagline{display:none}
+  .nav-inner{height:64px}
+
+  /* Hero */
+  .hero{min-height:100svh}
+  .hero-content{padding:0 6%}
+  .hero h1{font-size:36px;margin-bottom:16px;line-height:1.1}
+  .hero-sub{font-size:15px;margin-bottom:32px}
+  .hero-btns{gap:10px}
+  .btn-primary,.btn-outline{padding:13px 24px;font-size:11px}
+  .hero-scroll{display:none}
+  .hero-badge{display:none}
+
+  /* Trust bar — horizontally scrollable, no wrap */
+  .trust-bar{padding:14px 0}
+  .trust-inner{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4%}
+  .trust-inner::-webkit-scrollbar{display:none}
+  .trust-item{padding:4px 16px;font-size:10px;flex-shrink:0}
+
+  /* Photo strip */
+  .photo-strip-inner{grid-template-columns:repeat(3,1fr);height:130px}
   .ps-img:nth-child(4),.ps-img:nth-child(5){display:none}
+
+  /* About */
+  .about-strip{padding:52px 5%}
+  .about-grid{gap:32px}
+  .about-img img{min-height:260px}
+  .about-content{padding-right:0}
+  .values-list{gap:6px}
+  .val-chip{font-size:10px;padding:5px 10px}
+
+  /* Sections */
+  section{padding:52px 5%}
+  .section-h{font-size:28px}
+  .section-sub{font-size:15px}
+
+  /* Services */
+  .services-grid{grid-template-columns:1fr 1fr}
+  .service-card{padding:24px 18px}
+  .sc-h{font-size:16px}
+  .sc-p{font-size:13px}
+
+  /* Catering */
+  .cf-content{padding:36px 24px}
+  .cf-content h2{font-size:24px}
+  .cf-img{min-height:200px;order:-1}
+  .catering-feat .cf-grid{grid-template-columns:1fr}
+
+  /* Bundles */
+  .bundle-grid{grid-template-columns:1fr}
+  .bundles{padding:52px 4%}
+  .bundle-tabs{width:100%;box-sizing:border-box}
+  .bundle-tab{padding:11px 12px;font-size:11px;flex:1;text-align:center}
+  .bundle-tab-wrap{width:100%;overflow-x:auto}
+  .bc-name{font-size:19px}
+
+  /* Builder */
+  .bs-header{padding:14px 16px;gap:12px}
+  .bs-title{font-size:13px}
+  .bs-body{padding:0 16px 18px}
+  .builder-event .two-fields{grid-template-columns:1fr}
+  .opt{font-size:11px;padding:7px 12px}
+
+  /* Airbnb */
+  .airbnb{padding:52px 5%}
+  .airbnb-grid{gap:36px}
+  .airbnb-cards{grid-template-columns:1fr 1fr}
+
+  /* Coaching */
+  .coaching{padding:52px 5%}
+  .coaching-grid{grid-template-columns:1fr;gap:28px;margin-top:36px}
+  .coaching-cta-box{padding:20px}
+  .formats{gap:8px}
+  .format-badge{font-size:10px;padding:5px 10px}
+
+  /* Testimonials */
+  .testimonials{padding:52px 5%}
+  .testi-grid{grid-template-columns:1fr;gap:16px;margin-top:40px}
+  .testi-card{padding:24px 20px}
+  .testi-quote{font-size:15px}
+
+  /* Why us */
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why-us{padding:52px 5%}
+  .why-item{padding:28px 16px}
+
+  /* Mosaic */
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:140px 140px}
+  .mosaic-item.tall{grid-row:span 1}
+  .mosaic-item.wide{grid-column:span 2}
+
+  /* Service areas */
+  .areas{padding:44px 5%}
+  .areas-list{font-size:13px;line-height:2}
+
+  /* Final CTA */
+  .final-cta{padding:64px 5%}
+  .final-cta h2{font-size:28px}
+  .cta-row{flex-direction:column;align-items:center;gap:10px}
+  .cta-row .btn-primary,.cta-row .btn-outline{width:100%;max-width:320px;text-align:center;display:block}
+
+  /* Contact */
+  .contact-strip{padding:52px 5%}
+  .contact-grid{gap:36px}
+  .contact-form{padding:24px 18px}
+  .form-two{grid-template-columns:1fr}
+
+  /* Footer */
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .footer-bottom{flex-direction:column;text-align:center;gap:8px}
+  footer{padding:44px 5% 28px}
+  .footer-brand p{font-size:12px}
+
+  /* WhatsApp — sits above mobile bar with clearance */
+  .wa-float{bottom:80px;right:14px}
+  .wa-btn{width:48px;height:48px}
+  .wa-label{font-size:10px;padding:5px 10px}
+
+  /* Mobile CTA bar */
+  body{padding-bottom:62px}
+  .mob-call,.mob-quote{font-size:10px;padding:13px 6px;letter-spacing:.8px}
+  .mobile-cta-bar{padding:8px 10px;gap:6px}
 }
 @media(max-width:480px){
   .why-grid{grid-template-columns:1fr}
-  .two-fields{grid-template-columns:1fr}
-  .form-two{grid-template-columns:1fr}
-  .trust-item:nth-child(n+4){display:none}
-  .hero-badge{display:none}
+  .services-grid{grid-template-columns:1fr}
+  .airbnb-cards{grid-template-columns:1fr}
+  .hero h1{font-size:30px}
+  .hero-sub{font-size:13px}
+  .cf-content{padding:28px 16px}
+  .bundle-tab{font-size:10px;padding:10px 8px}
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:110px 110px}
+  .testi-card::before{font-size:60px;top:12px;right:16px}
+  .nav-logo img{height:36px}
+  .nav-logo-text .name{font-size:14px}
+  .about-strip,.contact-strip{padding:44px 4%}
+  .coaching-cta-box{padding:18px 16px}
+  .section-h{font-size:25px}
+  .final-cta h2{font-size:25px}
+  .final-cta{padding:52px 5%}
+  .contact-form{padding:20px 14px}
 }
 </style>
 </head>
@@ -505,7 +634,7 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.15);padding:
     <div class="ps-img"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="African plated dish"></div>
     <div class="ps-img"><img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&q=80" alt="African food close up"></div>
     <div class="ps-img"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&q=80" alt="Rice and stew"></div>
-    <div class="ps-img"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="African brunch spread"></div>
+    <div class="ps-img"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="African food spread"></div>
   </div>
 </div>
 
@@ -1064,7 +1193,7 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.15);padding:
 <div class="mosaic">
   <div class="mosaic-item tall"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=700&q=80" alt="African rice and stew"></div>
   <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&q=80" alt="Cameroonian stew dish"></div>
-  <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="African food spread"></div>
+  <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="African food spread"></div>
   <div class="mosaic-item wide"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=900&q=80" alt="African catering platter"></div>
 </div>
 
