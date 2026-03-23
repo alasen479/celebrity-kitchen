@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celebrity Kitchen | Dallas Catering, Meal Bundles & Food Services</title>
+<meta name="description" content="Dallas's premier food and hospitality brand. Premium catering, custom meal bundles, Airbnb host partnerships, and food business coaching. Serving all of DFW.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --gold:#C9A84C;
+  --gold-light:#E8D5A3;
+  --gold-pale:#FBF6EC;
+  --gold-dark:#9A7A2E;
+  --cream:#FAF8F3;
+  --dark:#18160F;
+  --charcoal:#2A2720;
+  --brown:#3D3527;
+  --warm-mid:#6B6355;
+  --warm-light:#A09480;
+  --border:#E4DCCC;
+  --section-alt:#F5F0E8;
+  --white:#FFFFFF;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--dark);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* ── TYPOGRAPHY ── */
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.15}
+.serif{font-family:'Playfair Display',serif}
+.label{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:500}
+
+/* ── PHOTO STRIP ── */
+.photo-strip{background:var(--dark);overflow:hidden}
+.photo-strip-inner{display:grid;grid-template-columns:repeat(5,1fr);height:220px}
+.ps-img{overflow:hidden;position:relative}
+.ps-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;filter:brightness(.85) saturate(1.1)}
+.ps-img:hover img{transform:scale(1.07);filter:brightness(1) saturate(1.2)}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;transition:all .4s ease;background:transparent}
+nav.scrolled{background:rgba(24,22,15,.96);backdrop-filter:blur(12px);box-shadow:0 2px 40px rgba(0,0,0,.3)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;color:#FAF8F3;text-decoration:none;letter-spacing:.5px}
+.nav-logo span{color:var(--gold);font-style:italic}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{color:rgba(250,248,243,.8);text-decoration:none;font-size:13px;letter-spacing:.5px;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links .has-drop{position:relative}
+.nav-links .has-drop:hover .dropdown{opacity:1;pointer-events:all;transform:translateY(0)}
+.dropdown{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-8px);background:var(--charcoal);min-width:220px;opacity:0;pointer-events:none;transition:all .25s ease;border-top:2px solid var(--gold)}
+.dropdown a{display:block;padding:12px 20px;color:rgba(250,248,243,.8);font-size:12px;letter-spacing:.5px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);transition:all .2s}
+.dropdown a:hover{background:rgba(201,168,76,.12);color:var(--gold);padding-left:26px}
+.nav-cta{background:var(--gold);color:var(--dark);padding:10px 24px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;text-decoration:none;transition:all .2s;font-family:'Jost',sans-serif}
+.nav-cta:hover{background:var(--gold-light)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:#FAF8F3;transition:all .3s}
+.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--dark);z-index:999;padding:100px 40px 40px;flex-direction:column;gap:8px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{color:#FAF8F3;text-decoration:none;font-size:22px;font-family:'Playfair Display',serif;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-nav .mob-cta{margin-top:24px;background:var(--gold);color:var(--dark);text-align:center;padding:16px;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:600;font-family:'Jost',sans-serif}
+
+/* ── HERO ── */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;background:var(--dark)}
+.hero-bg{position:absolute;inset:0;background:
+  linear-gradient(135deg,rgba(24,22,15,.92) 0%,rgba(24,22,15,.75) 50%,rgba(24,22,15,.55) 100%),
+  url('https://images.unsplash.com/photo-1555244162-803834f70033?w=1800&q=80') center/cover no-repeat;
+}
+.hero-content{position:relative;z-index:2;padding:0 5%;max-width:760px;animation:fadeUp .9s ease forwards}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(201,168,76,.5);padding:7px 18px;margin-bottom:36px}
+.hero-badge span{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.hero-badge::before{content:'';width:20px;height:1px;background:var(--gold)}
+.hero h1{font-size:clamp(46px,7vw,80px);color:#FAF8F3;font-weight:700;margin-bottom:24px;line-height:1.05}
+.hero h1 em{color:var(--gold);font-style:italic;display:block}
+.hero-sub{font-size:17px;color:rgba(250,248,243,.7);max-width:520px;margin-bottom:44px;line-height:1.7;font-weight:300}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn-primary{background:var(--gold);color:var(--dark);padding:15px 32px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;text-decoration:none;font-family:'Jost',sans-serif;transition:all .2s;display:inline-block}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-outline{border:1px solid rgba(250,248,243,.4);color:#FAF8F3;padding:15px 32px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500;text-decoration:none;font-family:'Jost',sans-serif;transition:all .2s;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(250,248,243,.4);font-size:10px;letter-spacing:3px;text-transform:uppercase}
+.hero-scroll::after{content:'';width:1px;height:40px;background:linear-gradient(to bottom,rgba(201,168,76,.6),transparent);animation:scrollPulse 2s ease-in-out infinite}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--brown);padding:18px 5%}
+.trust-inner{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0}
+.trust-item{display:flex;align-items:center;gap:8px;padding:6px 28px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);border-right:1px solid rgba(201,168,76,.2)}
+.trust-item:last-child{border-right:none}
+.trust-item .dot{width:4px;height:4px;background:var(--gold);border-radius:50%}
+
+/* ── SECTION COMMON ── */
+section{padding:96px 5%}
+.section-label{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.section-label::before{content:'';width:32px;height:1px;background:var(--gold)}
+.section-label span{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.section-h{font-size:clamp(32px,4vw,52px);color:var(--charcoal);margin-bottom:20px}
+.section-sub{font-size:16px;color:var(--warm-mid);max-width:580px;line-height:1.75}
+.center{text-align:center}
+.center .section-label{justify-content:center}
+.center .section-sub{margin-left:auto;margin-right:auto}
+
+/* ── ABOUT STRIP ── */
+.about-strip{background:var(--white);padding:96px 5%}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto}
+.about-img{position:relative}
+.about-img-main{width:100%;aspect-ratio:4/5;object-fit:cover;background:linear-gradient(135deg,#3D2E1A,#6B4F2A);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.img-placeholder{width:100%;height:100%;background:linear-gradient(160deg,var(--brown) 0%,#5C4225 40%,var(--brown) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:480px}
+.img-placeholder span{color:rgba(250,248,243,.25);font-size:11px;letter-spacing:3px;text-transform:uppercase}
+.img-placeholder .icon{font-size:40px;opacity:.2}
+.about-accent{position:absolute;bottom:-24px;right:-24px;width:160px;height:160px;background:var(--gold-pale);border:1px solid var(--gold-light);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;z-index:2}
+.about-accent .num{font-family:'Playfair Display',serif;font-size:40px;color:var(--gold);font-weight:700;line-height:1}
+.about-accent .txt{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--warm-mid)}
+.about-content{padding-right:20px}
+.about-content h2{font-size:clamp(30px,3.5vw,46px);color:var(--charcoal);margin-bottom:20px}
+.about-content p{color:var(--warm-mid);margin-bottom:16px;line-height:1.8;font-size:15px}
+.values-list{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 32px}
+.val-chip{border:1px solid var(--border);padding:6px 14px;font-size:11px;letter-spacing:1px;color:var(--warm-mid)}
+
+/* ── SERVICES GRID ── */
+.services{background:var(--cream)}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:64px;max-width:1300px;margin-left:auto;margin-right:auto}
+.service-card{background:var(--white);padding:44px 32px;position:relative;overflow:hidden;transition:all .3s ease;cursor:default}
+.service-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .3s ease;transform-origin:left}
+.service-card:hover{background:var(--charcoal);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.15)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover .sc-icon{color:var(--gold)}
+.service-card:hover .sc-h{color:#FAF8F3}
+.service-card:hover .sc-p{color:rgba(250,248,243,.6)}
+.service-card:hover .sc-link{color:var(--gold)}
+.sc-icon{font-size:32px;margin-bottom:20px;transition:color .3s}
+.sc-h{font-size:20px;color:var(--charcoal);margin-bottom:12px;transition:color .3s}
+.sc-p{font-size:14px;color:var(--warm-mid);line-height:1.7;margin-bottom:24px;transition:color .3s}
+.sc-link{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;font-weight:500;display:flex;align-items:center;gap:8px;transition:color .3s}
+.sc-link::after{content:'→';transition:transform .2s}
+.service-card:hover .sc-link::after{transform:translateX(4px)}
+
+/* ── CATERING FEATURE ── */
+.catering-feat{background:var(--charcoal);padding:0;overflow:hidden}
+.cf-grid{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.cf-img{background:linear-gradient(160deg,#2A1F0E,#4A3318);position:relative;overflow:hidden}
+.cf-img .overlay{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80') center/cover;opacity:.55}
+.cf-img .tag-strip{position:absolute;bottom:32px;left:32px;right:32px;display:flex;flex-wrap:wrap;gap:8px}
+.event-tag{background:rgba(24,22,15,.7);border:1px solid rgba(201,168,76,.3);color:var(--gold-light);padding:6px 14px;font-size:11px;letter-spacing:1px;backdrop-filter:blur(8px)}
+.cf-content{padding:80px 72px;display:flex;flex-direction:column;justify-content:center}
+.cf-content h2{font-size:clamp(28px,3vw,44px);color:#FAF8F3;margin-bottom:20px}
+.cf-content p{color:rgba(250,248,243,.65);line-height:1.8;margin-bottom:32px;font-size:15px}
+.steps{display:flex;flex-direction:column;gap:0;margin:32px 0}
+.step{display:flex;align-items:flex-start;gap:20px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.step:last-child{border-bottom:none}
+.step-num{width:36px;height:36px;border:1px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;flex-shrink:0;margin-top:2px}
+.step-text h4{color:#FAF8F3;font-size:14px;font-family:'Jost',sans-serif;font-weight:500;margin-bottom:4px;letter-spacing:.5px}
+.step-text p{color:rgba(250,248,243,.5);font-size:13px;line-height:1.6}
+
+/* ── BUNDLES ── */
+.bundles{background:var(--cream)}
+.bundles-header{text-align:center;max-width:680px;margin:0 auto 64px}
+.bundle-tabs{display:flex;justify-content:center;gap:0;margin-bottom:48px;border:1px solid var(--border);display:inline-flex;padding:6px}
+.bundle-tab{padding:12px 36px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .25s;color:var(--warm-mid);border:none;background:transparent;font-family:'Jost',sans-serif}
+.bundle-tab.active{background:var(--charcoal);color:var(--gold)}
+.bundle-tab-wrap{text-align:center;margin-bottom:48px}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* Ready-Made */
+.rm-intro{text-align:center;max-width:560px;margin:0 auto 40px;color:var(--warm-mid);font-size:15px;line-height:1.75}
+.bundle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
+.bundle-card{background:var(--white);border:1px solid var(--border);padding:36px 28px;position:relative;transition:all .3s}
+.bundle-card:hover{border-color:var(--gold);box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-3px)}
+.bc-badge{position:absolute;top:-1px;right:0;background:var(--gold);color:var(--dark);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;font-weight:600}
+.bc-badge.green{background:var(--charcoal);color:var(--gold-light)}
+.bc-icon{font-size:28px;margin-bottom:16px}
+.bc-name{font-family:'Playfair Display',serif;font-size:22px;color:var(--charcoal);margin-bottom:8px}
+.bc-price{font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;font-weight:500}
+.bc-desc{font-size:14px;color:var(--warm-mid);line-height:1.7;margin-bottom:24px}
+.bc-includes{list-style:none;margin-bottom:24px}
+.bc-includes li{font-size:13px;color:var(--warm-mid);padding:4px 0;padding-left:18px;position:relative;border-bottom:1px solid var(--border)}
+.bc-includes li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-size:11px}
+.bc-cta{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500;cursor:default;display:flex;align-items:center;gap:8px}
+.bc-cta::after{content:'→';transition:transform .2s}
+.bundle-card:hover .bc-cta::after{transform:translateX(4px)}
+
+/* Build Your Own */
+.byob-intro{max-width:640px;margin:0 auto 48px;text-align:center}
+.byob-intro p{color:var(--warm-mid);font-size:15px;line-height:1.75}
+.builder{max-width:800px;margin:0 auto}
+.builder-step{background:var(--white);border:1px solid var(--border);margin-bottom:12px;overflow:hidden}
+.bs-header{display:flex;align-items:center;gap:16px;padding:20px 28px;cursor:pointer;transition:background .2s;user-select:none}
+.bs-header:hover{background:var(--section-alt)}
+.bs-num{width:32px;height:32px;background:var(--charcoal);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:15px;flex-shrink:0}
+.bs-title{font-size:14px;font-weight:500;letter-spacing:.5px;color:var(--charcoal);flex:1}
+.bs-arrow{color:var(--warm-light);transition:transform .3s;font-size:18px}
+.builder-step.open .bs-arrow{transform:rotate(180deg)}
+.builder-step.open .bs-num{background:var(--gold);color:var(--dark)}
+.bs-body{display:none;padding:0 28px 24px}
+.builder-step.open .bs-body{display:block}
+.options-grid{display:flex;flex-wrap:wrap;gap:8px;padding-top:8px}
+.opt{border:1px solid var(--border);padding:8px 16px;font-size:12px;cursor:pointer;transition:all .2s;color:var(--charcoal);background:var(--white);font-family:'Jost',sans-serif;letter-spacing:.3px}
+.opt:hover{border-color:var(--gold);color:var(--charcoal)}
+.opt.selected{background:var(--gold-pale);border-color:var(--gold);color:var(--dark);font-weight:500}
+.builder-event{padding-top:8px}
+.builder-event label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--warm-mid);margin-bottom:6px;margin-top:16px}
+.builder-event input,.builder-event select,.builder-event textarea{width:100%;border:1px solid var(--border);background:var(--cream);padding:12px 16px;font-size:14px;font-family:'Jost',sans-serif;color:var(--charcoal);outline:none;transition:border-color .2s}
+.builder-event input:focus,.builder-event select:focus,.builder-event textarea:focus{border-color:var(--gold)}
+.builder-event textarea{resize:vertical;min-height:90px}
+.two-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.builder-submit{margin-top:28px;text-align:center}
+.builder-submit .note{font-size:12px;color:var(--warm-light);margin-top:12px;letter-spacing:.3px}
+.selection-summary{background:var(--charcoal);padding:16px 20px;margin:16px 0 0;display:none}
+.selection-summary.visible{display:block}
+.selection-summary p{font-size:12px;color:var(--gold-light);line-height:1.7}
+.selection-summary strong{color:var(--gold)}
+
+/* ── AIRBNB ── */
+.airbnb{background:var(--section-alt)}
+.airbnb-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto}
+.airbnb-content h2{font-size:clamp(28px,3vw,44px);color:var(--charcoal);margin-bottom:20px}
+.airbnb-content h2 em{color:var(--gold);font-style:italic}
+.airbnb-content p{color:var(--warm-mid);line-height:1.8;margin-bottom:28px;font-size:15px}
+.benefit-list{list-style:none;margin-bottom:32px}
+.benefit-list li{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--charcoal)}
+.benefit-list li:last-child{border-bottom:none}
+.benefit-list li .check{color:var(--gold);font-size:16px;flex-shrink:0;margin-top:1px}
+.airbnb-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.airbnb-card{background:var(--white);border:1px solid var(--border);padding:24px 20px;transition:all .25s}
+.airbnb-card:hover{border-color:var(--gold);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.ac-icon{font-size:22px;margin-bottom:10px}
+.ac-h{font-size:15px;color:var(--charcoal);margin-bottom:6px}
+.ac-p{font-size:13px;color:var(--warm-mid);line-height:1.6}
+
+/* ── COACHING ── */
+.coaching{background:var(--dark);padding:96px 5%}
+.coaching-inner{max-width:1200px;margin:0 auto}
+.coaching-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:64px}
+.coaching-content h2{color:#FAF8F3;font-size:clamp(28px,3vw,42px);margin-bottom:20px}
+.coaching-content h2 em{color:var(--gold);font-style:italic}
+.coaching-content p{color:rgba(250,248,243,.6);line-height:1.8;margin-bottom:28px;font-size:15px}
+.who-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.who-chip{border:1px solid rgba(201,168,76,.3);color:var(--gold-light);padding:7px 14px;font-size:12px;letter-spacing:.5px}
+.topics{display:grid;gap:0}
+.topic-item{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:20px;align-items:flex-start}
+.topic-item:last-child{border-bottom:none}
+.topic-icon{font-size:20px;flex-shrink:0;margin-top:3px}
+.topic-h{font-size:14px;color:#FAF8F3;font-weight:500;margin-bottom:4px}
+.topic-p{font-size:13px;color:rgba(250,248,243,.5);line-height:1.6}
+.coaching-cta-box{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);padding:36px;margin-top:40px}
+.coaching-cta-box h3{color:#FAF8F3;font-size:22px;margin-bottom:12px}
+.coaching-cta-box p{color:rgba(250,248,243,.6);font-size:14px;margin-bottom:24px;line-height:1.7}
+.formats{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.format-badge{background:rgba(255,255,255,.06);color:rgba(250,248,243,.7);padding:6px 14px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--white)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:64px auto 0}
+.testi-card{background:var(--cream);padding:36px 32px;position:relative;border:1px solid var(--border);transition:all .25s}
+.testi-card:hover{border-color:var(--gold-light);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.testi-card::before{content:'"';position:absolute;top:20px;right:28px;font-family:'Playfair Display',serif;font-size:80px;color:var(--gold-light);line-height:1;opacity:.5}
+.testi-stars{color:var(--gold);letter-spacing:3px;font-size:13px;margin-bottom:16px}
+.testi-quote{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;color:var(--charcoal);line-height:1.6;margin-bottom:24px}
+.testi-by{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:40px;height:40px;background:var(--brown);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--gold);font-weight:600;font-family:'Playfair Display',serif;flex-shrink:0}
+.testi-name{font-size:13px;font-weight:500;color:var(--charcoal)}
+.testi-detail{font-size:11px;color:var(--warm-light);letter-spacing:.5px}
+
+/* ── FOOD MOSAIC ── */
+.mosaic{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:240px 240px;gap:4px;background:var(--dark)}
+.mosaic-item{overflow:hidden;position:relative}
+.mosaic-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;filter:brightness(.9) saturate(1.1)}
+.mosaic-item:hover img{transform:scale(1.05);filter:brightness(1) saturate(1.25)}
+.mosaic-item.tall{grid-row:span 2}
+.mosaic-item.wide{grid-column:span 2}
+@media(max-width:768px){
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px}
+  .mosaic-item.tall{grid-row:span 1}
+  .mosaic-item.wide{grid-column:span 2}
+}
+@media(max-width:480px){.mosaic{grid-template-columns:1fr 1fr;grid-template-rows:130px 130px}}
+
+/* ── WHY US ── */
+.why-us{background:var(--section-alt)}
+.why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);max-width:1300px;margin:64px auto 0}
+.why-item{background:var(--white);padding:40px 28px;text-align:center;transition:background .25s}
+.why-item:hover{background:var(--charcoal)}
+.why-item:hover .wi-icon,.why-item:hover .wi-h,.why-item:hover .wi-p{color:#FAF8F3}
+.wi-icon{font-size:28px;margin-bottom:16px;display:block;transition:color .25s}
+.wi-h{font-size:15px;color:var(--charcoal);margin-bottom:8px;transition:color .25s}
+.wi-p{font-size:13px;color:var(--warm-mid);line-height:1.6;transition:color .25s}
+
+/* ── SERVICE AREAS ── */
+.areas{background:var(--charcoal);padding:64px 5%;text-align:center}
+.areas h3{font-family:'Playfair Display',serif;font-size:14px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-weight:400;margin-bottom:20px}
+.areas-list{max-width:900px;margin:0 auto;color:rgba(250,248,243,.5);font-size:14px;line-height:2.2;letter-spacing:.3px}
+.areas-list span{color:rgba(250,248,243,.7)}
+.areas-list .sep{color:var(--gold);margin:0 8px;opacity:.4}
+
+/* ── FINAL CTA ── */
+.final-cta{background:var(--dark);position:relative;overflow:hidden;padding:120px 5%;text-align:center}
+.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 70%)}
+.final-cta h2{font-size:clamp(36px,5vw,64px);color:#FAF8F3;max-width:700px;margin:0 auto 20px;position:relative}
+.final-cta h2 em{color:var(--gold);font-style:italic}
+.final-cta p{color:rgba(250,248,243,.55);font-size:16px;max-width:480px;margin:0 auto 44px;position:relative}
+.cta-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;position:relative}
+
+/* ── FOOTER ── */
+footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.15);padding:72px 5% 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;max-width:1200px;margin:0 auto 56px}
+.footer-brand .logo{font-family:'Playfair Display',serif;font-size:26px;color:#FAF8F3;margin-bottom:16px}
+.footer-brand .logo span{color:var(--gold);font-style:italic}
+.footer-brand p{color:rgba(250,248,243,.4);font-size:13px;line-height:1.8;margin-bottom:24px;max-width:280px}
+.footer-social{display:flex;gap:12px}
+.social-link{width:36px;height:36px;border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;color:rgba(250,248,243,.5);text-decoration:none;font-size:14px;transition:all .2s}
+.social-link:hover{border-color:var(--gold);color:var(--gold)}
+.footer-col h5{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-family:'Jost',sans-serif;font-weight:500}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{color:rgba(250,248,243,.45);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-col ul li a:hover{color:var(--gold-light)}
+.footer-contact a{color:rgba(250,248,243,.45);text-decoration:none;font-size:13px;display:block;margin-bottom:10px;transition:color .2s}
+.footer-contact a:hover{color:var(--gold-light)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:12px;color:rgba(250,248,243,.25)}
+.footer-tagline{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-size:13px;opacity:.7}
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float{position:fixed;bottom:100px;right:28px;z-index:950;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.wa-btn{width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;transition:all .3s;position:relative}
+.wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.55)}
+.wa-btn svg{width:28px;height:28px;fill:#fff}
+.wa-label{background:var(--dark);color:#fff;font-size:11px;letter-spacing:1px;padding:6px 12px;white-space:nowrap;opacity:0;transform:translateX(8px);transition:all .25s;pointer-events:none;border-left:2px solid #25D366}
+.wa-float:hover .wa-label{opacity:1;transform:translateX(0)}
+.wa-pulse{position:absolute;top:0;right:0;width:14px;height:14px;background:#25D366;border-radius:50%;border:2px solid var(--cream)}
+.wa-pulse::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:rgba(37,211,102,.4);animation:waPulse 2s ease-out infinite}
+@keyframes waPulse{0%{transform:scale(1);opacity:1}100%{transform:scale(2);opacity:0}}
+@media(max-width:768px){.wa-float{bottom:88px;right:16px}.wa-btn{width:50px;height:50px}}
+
+/* ── MOBILE CTA BAR ── */
+.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--dark);border-top:1px solid rgba(201,168,76,.2);padding:12px 16px;gap:10px}
+@media(max-width:768px){.mobile-cta-bar{display:flex}}
+.mob-call{flex:1;border:1px solid rgba(250,248,243,.25);color:#FAF8F3;text-align:center;padding:13px;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-family:'Jost',sans-serif;font-weight:500}
+.mob-quote{flex:1;background:var(--gold);color:var(--dark);text-align:center;padding:13px;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-family:'Jost',sans-serif;font-weight:600}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scrollPulse{0%,100%{opacity:.6}50%{opacity:1}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── CONTACT INLINE ── */
+.contact-strip{background:var(--section-alt);padding:96px 5%}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1100px;margin:0 auto;align-items:start}
+.contact-info h2{font-size:clamp(28px,3vw,40px);color:var(--charcoal);margin-bottom:16px}
+.contact-info p{color:var(--warm-mid);line-height:1.8;margin-bottom:32px;font-size:15px}
+.contact-methods{display:flex;flex-direction:column;gap:16px;margin-bottom:32px}
+.cm{display:flex;align-items:center;gap:16px;padding:16px 20px;background:var(--white);border:1px solid var(--border)}
+.cm-icon{font-size:18px;width:36px;text-align:center}
+.cm-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--warm-light);margin-bottom:2px}
+.cm-val{font-size:14px;color:var(--charcoal);font-weight:500}
+.contact-form{background:var(--white);padding:40px;border:1px solid var(--border)}
+.form-row{margin-bottom:20px}
+.form-row label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--warm-mid);margin-bottom:8px}
+.form-row input,.form-row select,.form-row textarea{width:100%;border:1px solid var(--border);background:var(--cream);padding:13px 16px;font-size:14px;font-family:'Jost',sans-serif;color:var(--charcoal);outline:none;transition:border-color .2s;-webkit-appearance:none}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--gold)}
+.form-row textarea{resize:vertical;min-height:110px}
+.form-two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-note{font-size:12px;color:var(--warm-light);margin-top:10px;line-height:1.6}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
+  .why-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:900px){
+  .about-grid,.cf-grid,.airbnb-grid,.coaching-grid,.contact-grid{grid-template-columns:1fr}
+  .about-accent{display:none}
+  .cf-img{min-height:300px}
+  .testi-grid{grid-template-columns:1fr}
+  .bundle-grid{grid-template-columns:1fr 1fr}
+  .airbnb-cards{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .hero h1{font-size:42px}
+  .services-grid{grid-template-columns:1fr}
+  .bundle-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .trust-inner{gap:0}
+  .trust-item{padding:6px 16px;font-size:10px}
+  section{padding:72px 5%}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  body{padding-bottom:70px}
+  .photo-strip-inner{grid-template-columns:repeat(3,1fr);height:160px}
+  .ps-img:nth-child(4),.ps-img:nth-child(5){display:none}
+}
+@media(max-width:480px){
+  .why-grid{grid-template-columns:1fr}
+  .two-fields{grid-template-columns:1fr}
+  .form-two{grid-template-columns:1fr}
+  .trust-item:nth-child(n+4){display:none}
+  .hero-badge{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#bundles" onclick="closeMob()">Menu Bundles</a>
+  <a href="#airbnb" onclick="closeMob()">Airbnb Hosts</a>
+  <a href="#coaching" onclick="closeMob()">Coaching</a>
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#testimonials" onclick="closeMob()">Reviews</a>
+  <a href="#contact" onclick="closeMob()" class="mob-cta">Get a Quote</a>
+  <div style="display:flex;gap:16px;margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)">
+    <a href="https://www.tiktok.com/@celebritycheff" target="_blank" rel="noopener" style="color:rgba(250,248,243,.5);text-decoration:none;font-size:13px;letter-spacing:.5px;font-family:'Jost',sans-serif">TikTok @celebritycheff</a>
+    <a href="https://www.instagram.com/celebrityyy_kitchen" target="_blank" rel="noopener" style="color:rgba(250,248,243,.5);text-decoration:none;font-size:13px;letter-spacing:.5px;font-family:'Jost',sans-serif">IG @celebrityyy_kitchen</a>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Celebrity <span>Kitchen</span></a>
+    <ul class="nav-links">
+      <li class="has-drop">
+        <a href="#services">Services ▾</a>
+        <div class="dropdown">
+          <a href="#catering">Catering Services</a>
+          <a href="#bundles">Menu Bundles</a>
+          <a href="#airbnb">Airbnb Host Partnerships</a>
+          <a href="#coaching">Coaching & Consulting</a>
+        </div>
+      </li>
+      <li><a href="#bundles">Menu Bundles</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+    <div class="hamburger" onclick="toggleMob()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span>Dallas, Texas · Premium Food & Hospitality</span></div>
+    <h1>Elevated Food.<em>Unforgettable Occasions.</em></h1>
+    <p class="hero-sub">Premium catering, flexible meal bundles, Airbnb guest hospitality, and food business coaching — all from one trusted Dallas kitchen.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Request a Quote</a>
+      <a href="#services" class="btn-outline">Explore Services</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="dot"></div>⭐ 5-Star Rated in Dallas</div>
+    <div class="trust-item"><div class="dot"></div>Locally Owned & Operated</div>
+    <div class="trust-item"><div class="dot"></div>Custom Menus Available</div>
+    <div class="trust-item"><div class="dot"></div>Airbnb Partner Friendly</div>
+    <div class="trust-item"><div class="dot"></div>Food Business Coaching</div>
+  </div>
+</div>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="photo-strip-inner">
+    <div class="ps-img"><img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&q=80" alt="Catering spread"></div>
+    <div class="ps-img"><img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80" alt="Plated dish"></div>
+    <div class="ps-img"><img src="https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=600&q=80" alt="Food close up"></div>
+    <div class="ps-img"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80" alt="Event food display"></div>
+    <div class="ps-img"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=80" alt="Brunch setup"></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about-strip reveal" id="about">
+  <div class="about-grid">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=85" alt="Celebrity Kitchen - beautifully plated food" style="width:100%;height:100%;min-height:480px;object-fit:cover;display:block;">
+      <div class="about-accent">
+        <div class="num">DFW</div>
+        <div class="txt">Dallas Proud</div>
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="section-label"><span>Our Story</span></div>
+      <h2>Built in Dallas.<br>Driven by Hospitality.</h2>
+      <p>At Celebrity Kitchen, we believe every gathering deserves food that's thoughtfully prepared, beautifully presented, and deeply satisfying. Whether you're planning a milestone event, stocking your Airbnb with guest-ready meals, building a flexible meal plan for your household, or launching your own food business — we're your partner from concept to plate.</p>
+      <p>We started with a simple belief: great food shouldn't be a luxury. It should be accessible, customizable, and delivered with warmth at every step. That belief drives everything we do — from how we source our ingredients to how we respond to your first message.</p>
+      <div class="values-list">
+        <span class="val-chip">Quality Without Compromise</span>
+        <span class="val-chip">Warmth & Hospitality</span>
+        <span class="val-chip">Dallas Community Roots</span>
+        <span class="val-chip">Flexible & Personal</span>
+      </div>
+      <a href="#contact" class="btn-primary">Work With Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="center reveal">
+    <div class="section-label"><span>What We Do</span></div>
+    <h2 class="section-h">Four Ways We Serve You</h2>
+    <p class="section-sub">From catering your next big event to coaching your next big business move — Celebrity Kitchen does it all.</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="sc-icon">🍴</div>
+      <h3 class="sc-h">Catering Services</h3>
+      <p class="sc-p">From intimate family dinners to large-scale corporate events — full-service catering with menus designed around your occasion and your guests.</p>
+      <a href="#catering" class="sc-link">Get a Quote</a>
+    </div>
+    <div class="service-card">
+      <div class="sc-icon">📦</div>
+      <h3 class="sc-h">Menu Bundles</h3>
+      <p class="sc-p">Choose from our ready-made bundles or build your own from scratch. Flexible, delicious, and designed for families, parties, or weekly meal plans.</p>
+      <a href="#bundles" class="sc-link">Explore Bundles</a>
+    </div>
+    <div class="service-card">
+      <div class="sc-icon">🏠</div>
+      <h3 class="sc-h">Airbnb Host Partnerships</h3>
+      <p class="sc-p">Elevate your guests' stay with premium, locally prepared meal packages — the hospitality upgrade that earns 5-star reviews.</p>
+      <a href="#airbnb" class="sc-link">Learn More</a>
+    </div>
+    <div class="service-card">
+      <div class="sc-icon">🎯</div>
+      <h3 class="sc-h">Coaching & Consulting</h3>
+      <p class="sc-p">Real-world guidance on catering, DoorDash, Uber Eats, restaurant operations, and building a food business you're proud of.</p>
+      <a href="#coaching" class="sc-link">Book a Session</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATERING FEATURE -->
+<div class="catering-feat reveal" id="catering">
+  <div class="cf-grid">
+    <div class="cf-img">
+      <div class="overlay"></div>
+      <div class="tag-strip">
+        <span class="event-tag">Birthdays</span>
+        <span class="event-tag">Weddings</span>
+        <span class="event-tag">Corporate</span>
+        <span class="event-tag">Baby Showers</span>
+        <span class="event-tag">Church Events</span>
+        <span class="event-tag">Graduations</span>
+        <span class="event-tag">Repasts</span>
+        <span class="event-tag">Family Reunions</span>
+        <span class="event-tag">Private Dinners</span>
+        <span class="event-tag">Holiday Parties</span>
+      </div>
+    </div>
+    <div class="cf-content">
+      <div class="section-label" style="margin-bottom:20px"><span>Catering Services</span></div>
+      <h2>Your Event,<br>Perfectly Catered.</h2>
+      <p>From birthday dinners to corporate luncheons — Celebrity Kitchen shows up, sets up, and shows out. We handle every detail so you can be fully present for the people who matter.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <h4>Tell Us About Your Event</h4>
+            <p>Share your event type, guest count, date, and any preferences.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <h4>Receive a Custom Quote</h4>
+            <p>We'll send a personalized proposal with menu options within 24–48 hours.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <h4>Enjoy Your Occasion</h4>
+            <p>We handle the setup, food, and presentation. You enjoy every moment.</p>
+          </div>
+        </div>
+      </div>
+      <a href="#contact" class="btn-primary">Get a Catering Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- MENU BUNDLES -->
+<section class="bundles reveal" id="bundles">
+  <div class="bundles-header">
+    <div class="section-label" style="justify-content:center"><span>Menu Bundles</span></div>
+    <h2 class="section-h">Your Meals, Your Way.</h2>
+    <p class="section-sub" style="margin:0 auto">Browse our chef-curated Ready-Made Bundles — or build something completely your own. Either way, premium flavor is guaranteed.</p>
+  </div>
+
+  <div class="bundle-tab-wrap">
+    <div class="bundle-tabs">
+      <button class="bundle-tab active" onclick="switchTab('ready',this)">🍽 Ready-Made Bundles</button>
+      <button class="bundle-tab" onclick="switchTab('custom',this)">✏️ Build Your Own Bundle</button>
+    </div>
+  </div>
+
+  <!-- READY MADE -->
+  <div class="tab-panel active" id="tab-ready">
+    <p class="rm-intro">Choose from our most popular pre-curated bundles — perfect for families, parties, and busy professionals who want a great meal without the guesswork.</p>
+    <div class="bundle-grid">
+      <div class="bundle-card">
+        <span class="bc-badge">Most Popular</span>
+        <div class="bc-icon">🏠</div>
+        <h3 class="bc-name">The Family Feast</h3>
+        <div class="bc-price">Starting at market price · Feeds 4–6</div>
+        <p class="bc-desc">Classic comfort, premium quality. Everything your family needs for a satisfying, home-cooked style meal.</p>
+        <ul class="bc-includes">
+          <li>Choice of protein entrée</li>
+          <li>2 sides of your choice</li>
+          <li>Rice or pasta base</li>
+          <li>Rolls & dessert</li>
+        </ul>
+        <div class="bc-cta"><a href="#contact" style="color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:8px">Request Pricing</a></div>
+      </div>
+      <div class="bundle-card">
+        <span class="bc-badge green">Party Ready</span>
+        <div class="bc-icon">🎉</div>
+        <h3 class="bc-name">Party Platter Pack</h3>
+        <div class="bc-price">Starting at market price · Serves 10–15</div>
+        <p class="bc-desc">Designed for celebrations — multiple proteins, crowd-pleasing sides, and everything you need to feed a gathering in style.</p>
+        <ul class="bc-includes">
+          <li>2 protein selections</li>
+          <li>3 sides of your choice</li>
+          <li>Starch & bread</li>
+          <li>Dessert tray included</li>
+        </ul>
+        <div class="bc-cta"><a href="#contact" style="color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:8px">Request Pricing</a></div>
+      </div>
+      <div class="bundle-card">
+        <div class="bc-icon">☀️</div>
+        <h3 class="bc-name">Weekend Brunch Bundle</h3>
+        <div class="bc-price">Starting at market price · Serves 4–8</div>
+        <p class="bc-desc">Elevate your weekend with a beautifully prepared brunch spread — perfect for hosting family, friends, or a special occasion morning.</p>
+        <ul class="bc-includes">
+          <li>Breakfast proteins</li>
+          <li>Eggs & brunch sides</li>
+          <li>Pastries & fruit</li>
+          <li>Juice / mimosa ready</li>
+        </ul>
+        <div class="bc-cta"><a href="#contact" style="color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:8px">Request Pricing</a></div>
+      </div>
+      <div class="bundle-card">
+        <span class="bc-badge">Corporate Friendly</span>
+        <div class="bc-icon">💼</div>
+        <h3 class="bc-name">Corporate Lunch Box</h3>
+        <div class="bc-price">Per person pricing available</div>
+        <p class="bc-desc">Individual boxed meals for office meetings, team trainings, and corporate events. Impress your team without the hassle.</p>
+        <ul class="bc-includes">
+          <li>Individual entrée</li>
+          <li>Side & starch</li>
+          <li>Dessert bite</li>
+          <li>Utensils & napkins</li>
+        </ul>
+        <div class="bc-cta"><a href="#contact" style="color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:8px">Request Pricing</a></div>
+      </div>
+      <div class="bundle-card">
+        <span class="bc-badge">Guest Favorite</span>
+        <div class="bc-icon">🏡</div>
+        <h3 class="bc-name">Airbnb Welcome Bundle</h3>
+        <div class="bc-price">Custom pricing for hosts</div>
+        <p class="bc-desc">A warm, ready-to-serve meal waiting for your guests when they arrive. The ultimate hosting touch that earns the reviews.</p>
+        <ul class="bc-includes">
+          <li>1–2 protein options</li>
+          <li>2 sides</li>
+          <li>Starch & bread</li>
+          <li>Dessert item</li>
+        </ul>
+        <div class="bc-cta"><a href="#airbnb" style="color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:8px">Learn About Hosting</a></div>
+      </div>
+      <div class="bundle-card">
+        <span class="bc-badge">Chef's Pick</span>
+        <div class="bc-icon">👨‍🍳</div>
+        <h3 class="bc-name">Chef's Special Bundle</h3>
+        <div class="bc-price">Seasonal · Inquire for details</div>
+        <p class="bc-desc">Let the chef decide. Our rotating chef's special bundle features seasonal favorites, signature dishes, and premium selections curated for the week.</p>
+        <ul class="bc-includes">
+          <li>Seasonal protein selection</li>
+          <li>Chef-chosen sides</li>
+          <li>Signature starch</li>
+          <li>House dessert</li>
+        </ul>
+        <div class="bc-cta"><a href="#contact" style="color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:8px">Inquire Now</a></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <p style="font-size:14px;color:var(--warm-mid);margin-bottom:16px">Don't see exactly what you need? Build your own bundle below.</p>
+      <button onclick="switchTab('custom',document.querySelectorAll('.bundle-tab')[1])" class="btn-primary" style="cursor:pointer;border:none">✏️ Build My Own Bundle</button>
+    </div>
+  </div>
+
+  <!-- BUILD YOUR OWN -->
+  <div class="tab-panel" id="tab-custom">
+    <div class="byob-intro">
+      <p>Pick exactly what you want — proteins, sides, starches, desserts, and more. Select your items below, fill in your event details, and we'll send you a custom quote within 24 hours.</p>
+    </div>
+    <div class="builder">
+
+      <div class="builder-step open" id="bstep-1">
+        <div class="bs-header" onclick="toggleStep('bstep-1')">
+          <div class="bs-num">1</div>
+          <div class="bs-title">Choose Your Protein(s) — select all that apply</div>
+          <div class="bs-arrow">▾</div>
+        </div>
+        <div class="bs-body">
+          <div class="options-grid" id="proteins">
+            <span class="opt" onclick="toggleOpt(this,'proteins')">Smothered Chicken</span>
+            <span class="opt" onclick="toggleOpt(this,'proteins')">Fried Chicken</span>
+            <span class="opt" onclick="toggleOpt(this,'proteins')">Beef Tips</span>
+            <span class="opt" onclick="toggleOpt(this,'proteins')">Oxtails</span>
+            <span class="opt" onclick="toggleOpt(this,'proteins')">Baked Fish</span>
+            <span class="opt" onclick="toggleOpt(this,'proteins')">Salmon</span>
+            <span class="opt" onclick="toggleOpt(this,'proteins')">Shrimp</span>
+            <span class="opt" onclick="toggleOpt(this,'proteins')">Turkey Legs</span>
+            <span class="opt" onclick="toggleOpt(this,'proteins')">Pork Chops</span>
+            <span class="opt" onclick="toggleOpt(this,'proteins')">Baked Chicken</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="builder-step" id="bstep-2">
+        <div class="bs-header" onclick="toggleStep('bstep-2')">
+          <div class="bs-num">2</div>
+          <div class="bs-title">Choose Your Sides — up to 3 selections</div>
+          <div class="bs-arrow">▾</div>
+        </div>
+        <div class="bs-body">
+          <div class="options-grid" id="sides">
+            <span class="opt" onclick="toggleOpt(this,'sides')">Mac & Cheese</span>
+            <span class="opt" onclick="toggleOpt(this,'sides')">Collard Greens</span>
+            <span class="opt" onclick="toggleOpt(this,'sides')">Candied Yams</span>
+            <span class="opt" onclick="toggleOpt(this,'sides')">Green Beans</span>
+            <span class="opt" onclick="toggleOpt(this,'sides')">Baked Beans</span>
+            <span class="opt" onclick="toggleOpt(this,'sides')">Potato Salad</span>
+            <span class="opt" onclick="toggleOpt(this,'sides')">Cabbage</span>
+            <span class="opt" onclick="toggleOpt(this,'sides')">Corn on the Cob</span>
+            <span class="opt" onclick="toggleOpt(this,'sides')">Fried Cabbage</span>
+            <span class="opt" onclick="toggleOpt(this,'sides')">Black-Eyed Peas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="builder-step" id="bstep-3">
+        <div class="bs-header" onclick="toggleStep('bstep-3')">
+          <div class="bs-num">3</div>
+          <div class="bs-title">Choose Your Starch / Base</div>
+          <div class="bs-arrow">▾</div>
+        </div>
+        <div class="bs-body">
+          <div class="options-grid" id="starches">
+            <span class="opt" onclick="toggleOpt(this,'starches')">White Rice</span>
+            <span class="opt" onclick="toggleOpt(this,'starches')">Dirty Rice</span>
+            <span class="opt" onclick="toggleOpt(this,'starches')">Mashed Potatoes</span>
+            <span class="opt" onclick="toggleOpt(this,'starches')">Pasta</span>
+            <span class="opt" onclick="toggleOpt(this,'starches')">Cornbread Dressing</span>
+            <span class="opt" onclick="toggleOpt(this,'starches')">Fried Rice</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="builder-step" id="bstep-4">
+        <div class="bs-header" onclick="toggleStep('bstep-4')">
+          <div class="bs-num">4</div>
+          <div class="bs-title">Desserts & Extras — optional add-ons</div>
+          <div class="bs-arrow">▾</div>
+        </div>
+        <div class="bs-body">
+          <div class="options-grid" id="desserts">
+            <span class="opt" onclick="toggleOpt(this,'desserts')">Banana Pudding</span>
+            <span class="opt" onclick="toggleOpt(this,'desserts')">Red Velvet Cake</span>
+            <span class="opt" onclick="toggleOpt(this,'desserts')">Peach Cobbler</span>
+            <span class="opt" onclick="toggleOpt(this,'desserts')">Sweet Potato Pie</span>
+            <span class="opt" onclick="toggleOpt(this,'desserts')">Bread Pudding</span>
+            <span class="opt" onclick="toggleOpt(this,'desserts')">Rolls / Cornbread</span>
+            <span class="opt" onclick="toggleOpt(this,'desserts')">Pound Cake</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="builder-step" id="bstep-5">
+        <div class="bs-header" onclick="toggleStep('bstep-5')">
+          <div class="bs-num">5</div>
+          <div class="bs-title">Event Details & Serving Size</div>
+          <div class="bs-arrow">▾</div>
+        </div>
+        <div class="bs-body">
+          <div class="builder-event">
+            <div class="two-fields">
+              <div>
+                <label>Guest Count / Serving Size</label>
+                <input type="number" id="guestCount" placeholder="e.g. 12" min="1">
+              </div>
+              <div>
+                <label>Event Type</label>
+                <select id="eventType">
+                  <option value="">Select event type</option>
+                  <option>Birthday Party</option>
+                  <option>Baby Shower</option>
+                  <option>Wedding / Reception</option>
+                  <option>Graduation</option>
+                  <option>Church Event</option>
+                  <option>Repast</option>
+                  <option>Corporate Event</option>
+                  <option>Family Gathering</option>
+                  <option>Weekly Meal Prep</option>
+                  <option>Airbnb Guest Meal</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <label>Dietary Restrictions or Special Requests</label>
+            <textarea id="dietary" placeholder="e.g. No pork, vegetarian options needed, nut allergy, etc."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="selection-summary" id="selectionSummary">
+        <p id="summaryText"></p>
+      </div>
+
+      <div class="builder-step" id="bstep-6">
+        <div class="bs-header" onclick="toggleStep('bstep-6')">
+          <div class="bs-num">6</div>
+          <div class="bs-title">Your Contact Information</div>
+          <div class="bs-arrow">▾</div>
+        </div>
+        <div class="bs-body">
+          <div class="builder-event">
+            <div class="two-fields">
+              <div>
+                <label>Full Name</label>
+                <input type="text" id="bundleName" placeholder="Your full name">
+              </div>
+              <div>
+                <label>Phone Number</label>
+                <input type="tel" id="bundlePhone" placeholder="(214) 000-0000">
+              </div>
+            </div>
+            <label>Email Address</label>
+            <input type="email" id="bundleEmail" placeholder="your@email.com">
+          </div>
+        </div>
+      </div>
+
+      <div class="builder-submit">
+        <button onclick="submitBundle()" class="btn-primary" style="cursor:pointer;border:none;font-size:13px;padding:16px 48px">Submit My Bundle Request →</button>
+        <p class="note">Your custom quote will be sent within 24 hours. Pricing is based on your selections, guest count, and serving format.</p>
+      </div>
+      <div id="bundleConfirm" style="display:none;text-align:center;padding:28px;background:var(--gold-pale);border:1px solid var(--gold-light);margin-top:20px">
+        <p style="font-family:'Playfair Display',serif;font-size:20px;color:var(--charcoal);margin-bottom:8px">✓ Bundle Request Received!</p>
+        <p style="font-size:14px;color:var(--warm-mid)">Thank you! We'll review your selections and send your custom quote within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AIRBNB -->
+<section class="airbnb reveal" id="airbnb">
+  <div class="airbnb-grid">
+    <div class="airbnb-content">
+      <div class="section-label"><span>Airbnb Host Partnerships</span></div>
+      <h2>Your Guests Came for the Stay.<br><em>Let Them Stay for the Food.</em></h2>
+      <p>In a crowded Dallas Airbnb market, cleanliness and location are table stakes. The hosts who earn Superhost status — and keep it — create moments their guests can't stop talking about. A beautifully prepared meal from Celebrity Kitchen is the easiest, most memorable touch you can add.</p>
+      <ul class="benefit-list">
+        <li><span class="check">★</span>Stand out in a competitive DFW hosting market</li>
+        <li><span class="check">★</span>Generate more 5-star reviews through memorable experiences</li>
+        <li><span class="check">★</span>Offer a premium add-on without cooking a single dish yourself</li>
+        <li><span class="check">★</span>Flexible options for any property — studio to large group home</li>
+        <li><span class="check">★</span>Reliable, locally operated partner who understands hospitality</li>
+      </ul>
+      <a href="#contact" class="btn-primary">Schedule a Partnership Call</a>
+    </div>
+    <div class="airbnb-cards">
+      <div class="airbnb-card">
+        <div class="ac-icon">🤝</div>
+        <h4 class="ac-h">Welcome Meal Package</h4>
+        <p class="ac-p">A warm meal waiting when guests arrive. First impressions that become 5-star reviews.</p>
+      </div>
+      <div class="airbnb-card">
+        <div class="ac-icon">🌅</div>
+        <h4 class="ac-h">Breakfast & Brunch</h4>
+        <p class="ac-p">Morning meals delivered or pre-stocked for guests to enjoy at their leisure.</p>
+      </div>
+      <div class="airbnb-card">
+        <div class="ac-icon">🥘</div>
+        <h4 class="ac-h">Group Platter Package</h4>
+        <p class="ac-p">For larger properties and group bookings — feeds 6–20+ guests with style.</p>
+      </div>
+      <div class="airbnb-card">
+        <div class="ac-icon">🎂</div>
+        <h4 class="ac-h">Special Occasion Add-Ons</h4>
+        <p class="ac-p">Birthday dinners, anniversaries, bachelorettes — turn stays into celebrations.</p>
+      </div>
+      <div class="airbnb-card">
+        <div class="ac-icon">🛒</div>
+        <h4 class="ac-h">Pre-Arrival Stocked Meals</h4>
+        <p class="ac-p">Fridge-ready meals stocked before check-in. The ultimate seamless experience.</p>
+      </div>
+      <div class="airbnb-card">
+        <div class="ac-icon">🔄</div>
+        <h4 class="ac-h">Recurring Partnership</h4>
+        <p class="ac-p">Standing arrangements per booking. We handle the food. You take the credit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COACHING -->
+<section class="coaching reveal" id="coaching">
+  <div class="coaching-inner">
+    <div class="center">
+      <div class="section-label" style="justify-content:center"><span>Coaching & Consulting</span></div>
+      <h2 style="color:#FAF8F3;font-size:clamp(30px,4vw,52px);margin-bottom:16px">You Have the Dream.<br><em style="color:var(--gold)">We Have the Roadmap.</em></h2>
+      <p style="color:rgba(250,248,243,.55);max-width:560px;margin:0 auto;font-size:15px;line-height:1.75">Real, practical 1-on-1 coaching for aspiring caterers, restaurant operators, DoorDash and Uber Eats entrepreneurs, and food business builders.</p>
+    </div>
+    <div class="coaching-grid">
+      <div class="coaching-content">
+        <p>Celebrity Kitchen's founder has built a food business from the ground up in one of the most competitive markets in the country. Our coaching and consulting sessions are built on real-world experience — not textbooks. You get exactly what works, what to avoid, and how to build something that lasts.</p>
+        <h4 style="color:rgba(250,248,243,.4);font-size:10px;letter-spacing:3px;text-transform:uppercase;font-family:'Jost',sans-serif;margin-bottom:12px">Who This Is For</h4>
+        <div class="who-chips">
+          <span class="who-chip">Aspiring Caterers</span>
+          <span class="who-chip">DoorDash & Uber Eats Drivers</span>
+          <span class="who-chip">Restaurant Starters</span>
+          <span class="who-chip">Food Truck Operators</span>
+          <span class="who-chip">Home-Based Food Businesses</span>
+          <span class="who-chip">Anyone Monetizing Food</span>
+        </div>
+        <div class="coaching-cta-box">
+          <h3>Coaching That Works Around You</h3>
+          <p>Sessions available via phone, video call, or in-person in the Dallas area. Single strategy sessions, multi-session packages, and ongoing monthly coaching available.</p>
+          <div class="formats">
+            <span class="format-badge">📞 Phone</span>
+            <span class="format-badge">💻 Video Call</span>
+            <span class="format-badge">🤝 In-Person (DFW)</span>
+          </div>
+          <a href="#contact" class="btn-primary">Book a Coaching Session</a>
+        </div>
+      </div>
+      <div class="topics">
+        <div class="topic-item">
+          <div class="topic-icon">🍽</div>
+          <div>
+            <div class="topic-h">Catering Business Setup</div>
+            <p class="topic-p">Pricing, packaging, equipment, licensing, and finding your first clients from day one.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <div class="topic-icon">📱</div>
+          <div>
+            <div class="topic-h">DoorDash & Uber Eats Strategy</div>
+            <p class="topic-p">Profile optimization, income growth, rating management, and scaling delivery revenue.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <div class="topic-icon">🏪</div>
+          <div>
+            <div class="topic-h">Restaurant Business Foundations</div>
+            <p class="topic-p">Concept development, cost control, menu engineering, staffing, and operations.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <div class="topic-icon">📊</div>
+          <div>
+            <div class="topic-h">Food Business Operations</div>
+            <p class="topic-p">Systems, vendor relationships, pricing strategy, and sustainable growth planning.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <div class="topic-icon">💡</div>
+          <div>
+            <div class="topic-h">Real Talk. Real Results.</div>
+            <p class="topic-p">Most food business advice is generic. Ours is specific, actionable, and built on what actually works in Dallas's market today.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials reveal" id="testimonials">
+  <div class="center">
+    <div class="section-label"><span>Client Love</span></div>
+    <h2 class="section-h">What Dallas is Saying</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"Celebrity Kitchen made our family reunion the most memorable we've ever had. The food was exceptional — every tray was empty by the end of the night."</p>
+      <div class="testi-by">
+        <div class="testi-avatar">T</div>
+        <div>
+          <div class="testi-name">Tanisha M.</div>
+          <div class="testi-detail">Family Reunion Catering · Dallas, TX</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"As an Airbnb host, I was skeptical at first — but my guests absolutely love the meal packages. My reviews and booking rate have never been better."</p>
+      <div class="testi-by">
+        <div class="testi-avatar">M</div>
+        <div>
+          <div class="testi-name">Marcus D.</div>
+          <div class="testi-detail">Airbnb Host · Dallas/Uptown Area</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">"The coaching session completely changed how I approach my catering business. I left with a real pricing strategy and a 90-day action plan I'm still using."</p>
+      <div class="testi-by">
+        <div class="testi-avatar">A</div>
+        <div>
+          <div class="testi-name">Aaliyah W.</div>
+          <div class="testi-detail">Coaching Client · DFW Area</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOD PHOTO MOSAIC -->
+<div class="mosaic">
+  <div class="mosaic-item tall"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=700&q=80" alt="Food spread"></div>
+  <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Plated meal"></div>
+  <div class="mosaic-item"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" alt="Colorful dish"></div>
+  <div class="mosaic-item wide"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=900&q=80" alt="Catering event"></div>
+</div>
+
+<!-- WHY US -->
+<section class="why-us reveal">
+  <div class="center">
+    <div class="section-label"><span>Why Celebrity Kitchen</span></div>
+    <h2 class="section-h">Why Dallas Chooses Us</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-item">
+      <span class="wi-icon">🏆</span>
+      <h4 class="wi-h">Premium Quality</h4>
+      <p class="wi-p">Every dish crafted with care, real ingredients, and a commitment to excellence.</p>
+    </div>
+    <div class="why-item">
+      <span class="wi-icon">🎨</span>
+      <h4 class="wi-h">Fully Flexible</h4>
+      <p class="wi-p">Ready-made bundles or fully custom builds — you always get exactly what you want.</p>
+    </div>
+    <div class="why-item">
+      <span class="wi-icon">📍</span>
+      <h4 class="wi-h">Dallas Local</h4>
+      <p class="wi-p">Community-rooted, responsive, and invested in the people we serve across DFW.</p>
+    </div>
+    <div class="why-item">
+      <span class="wi-icon">🤝</span>
+      <h4 class="wi-h">Easy to Work With</h4>
+      <p class="wi-p">Simple inquiry process, fast responses, and personalized service every time.</p>
+    </div>
+    <div class="why-item">
+      <span class="wi-icon">💼</span>
+      <h4 class="wi-h">Multi-Service Expert</h4>
+      <p class="wi-p">Catering to coaching — we know this industry inside out, and it shows.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<div class="areas">
+  <h3>Proudly Serving the Dallas–Fort Worth Area</h3>
+  <div class="areas-list">
+    <span>Dallas</span><span class="sep">·</span>
+    <span>Fort Worth</span><span class="sep">·</span>
+    <span>Plano</span><span class="sep">·</span>
+    <span>Frisco</span><span class="sep">·</span>
+    <span>Arlington</span><span class="sep">·</span>
+    <span>Garland</span><span class="sep">·</span>
+    <span>Irving</span><span class="sep">·</span>
+    <span>McKinney</span><span class="sep">·</span>
+    <span>Richardson</span><span class="sep">·</span>
+    <span>Grand Prairie</span><span class="sep">·</span>
+    <span>Mesquite</span><span class="sep">·</span>
+    <span>Denton</span><span class="sep">·</span>
+    <span>Allen</span><span class="sep">·</span>
+    <span>Duncanville</span><span class="sep">·</span>
+    <span>DeSoto</span><span class="sep">·</span>
+    <span>Cedar Hill</span><span class="sep">·</span>
+    and surrounding DFW communities
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-strip reveal" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-label"><span>Get In Touch</span></div>
+      <h2>Let's Make Something Happen.</h2>
+      <p>Whether you're planning an event, exploring an Airbnb partnership, building a custom bundle, or booking a coaching call — we'd love to hear from you. Fill out the form and we'll respond within 24 hours.</p>
+      <div class="contact-methods">
+        <div class="cm">
+          <div class="cm-icon">📞</div>
+          <div>
+            <div class="cm-label">Call or Text</div>
+            <div class="cm-val"><a href="tel:+12406107818" style="color:var(--charcoal);text-decoration:none">+1 (240) 610-7818</a></div>
+          </div>
+        </div>
+        <div class="cm">
+          <div class="cm-icon" style="color:#25D366">💬</div>
+          <div>
+            <div class="cm-label">WhatsApp</div>
+            <div class="cm-val"><a href="https://wa.me/12406107818" target="_blank" style="color:#25D366;text-decoration:none;font-weight:500">Message Us on WhatsApp →</a></div>
+          </div>
+        </div>
+        <div class="cm">
+          <div class="cm-icon">📧</div>
+          <div>
+            <div class="cm-label">Email</div>
+            <div class="cm-val"><a href="mailto:hello@celebritykitchendallas.com" style="color:var(--charcoal);text-decoration:none">hello@celebritykitchendallas.com</a></div>
+          </div>
+        </div>
+        <div class="cm">
+          <div class="cm-icon">📍</div>
+          <div>
+            <div class="cm-label">Service Area</div>
+            <div class="cm-val">Dallas–Fort Worth, Texas</div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--warm-light);line-height:1.7">We typically respond within 24 hours — often the same day. For urgent needs, please call or text us directly.</p>
+    </div>
+    <div class="contact-form">
+      <form id="contactForm" onsubmit="submitContact(event)">
+        <div class="form-row">
+          <label>Inquiry Type</label>
+          <select name="type" required>
+            <option value="">Select inquiry type</option>
+            <option>Catering Services</option>
+            <option>Menu Bundle — Ready-Made</option>
+            <option>Menu Bundle — Build My Own</option>
+            <option>Airbnb Host Partnership</option>
+            <option>Coaching & Consulting</option>
+            <option>General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-two">
+          <div class="form-row">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-row">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(214) 000-0000" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-two">
+          <div class="form-row">
+            <label>Event Date (if applicable)</label>
+            <input type="date">
+          </div>
+          <div class="form-row">
+            <label>Guest Count</label>
+            <input type="number" placeholder="e.g. 25" min="1">
+          </div>
+        </div>
+        <div class="form-row">
+          <label>Tell Us More</label>
+          <textarea placeholder="Share any details about your event, needs, or questions..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;cursor:pointer;border:none;font-size:12px;padding:16px">Send My Inquiry →</button>
+        <p class="form-note">By submitting this form you agree to be contacted about your inquiry. We respect your privacy.</p>
+      </form>
+      <div id="contactConfirm" style="display:none;padding:32px;text-align:center">
+        <p style="font-family:'Playfair Display',serif;font-size:22px;color:var(--charcoal);margin-bottom:10px">✓ Message Received!</p>
+        <p style="font-size:14px;color:var(--warm-mid)">Thank you for reaching out. We'll be in touch within 24 hours — often sooner.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2>Ready to Elevate Your<br><em>Next Experience?</em></h2>
+  <p>Let's talk food, events, partnerships, or business growth. We're here and ready.</p>
+  <div class="cta-row">
+    <a href="#contact" class="btn-primary">Request a Quote</a>
+    <a href="#coaching" class="btn-outline">Book a Coaching Call</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Celebrity <span>Kitchen</span></div>
+      <p>Dallas's trusted food and hospitality partner — bringing elevated catering, flexible meal bundles, Airbnb guest experiences, and real-world food business expertise to everyone we serve.</p>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px">
+        <a href="https://www.tiktok.com/@celebritycheff" target="_blank" rel="noopener" style="color:rgba(250,248,243,.45);font-size:12px;text-decoration:none;letter-spacing:.3px;transition:color .2s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(250,248,243,.45)'">TikTok · @celebritycheff</a>
+        <a href="https://www.instagram.com/celebrityyy_kitchen" target="_blank" rel="noopener" style="color:rgba(250,248,243,.45);font-size:12px;text-decoration:none;letter-spacing:.3px;transition:color .2s" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(250,248,243,.45)'">Instagram · @celebrityyy_kitchen</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@celebritycheff" target="_blank" rel="noopener" class="social-link" aria-label="TikTok @celebritycheff" title="TikTok @celebritycheff">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/celebrityyy_kitchen" target="_blank" rel="noopener" class="social-link" aria-label="Instagram @celebrityyy_kitchen" title="Instagram @celebrityyy_kitchen">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#catering">Catering Services</a></li>
+        <li><a href="#bundles">Ready-Made Bundles</a></li>
+        <li><a href="#bundles">Build Your Own Bundle</a></li>
+        <li><a href="#airbnb">Airbnb Partnerships</a></li>
+        <li><a href="#coaching">Coaching & Consulting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Get a Quote</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h5>Contact</h5>
+      <a href="tel:+12406107818">📞 +1 (240) 610-7818</a>
+      <a href="https://wa.me/12406107818" target="_blank" style="color:#25D366 !important">💬 WhatsApp Us</a>
+      <a href="mailto:hello@celebritykitchendallas.com">✉ hello@celebritykitchendallas.com</a>
+      <a href="#contact">📍 Dallas–Fort Worth, TX</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Celebrity Kitchen Dallas. All rights reserved.</p>
+    <div class="footer-tagline">From Our Kitchen to Your Occasion.</div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT BUTTON -->
+<div class="wa-float">
+  <div class="wa-label">Chat on WhatsApp</div>
+  <a href="https://wa.me/12406107818" target="_blank" rel="noopener" class="wa-btn" aria-label="Chat with Celebrity Kitchen on WhatsApp">
+    <div class="wa-pulse"></div>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- MOBILE CTA BAR -->
+<div class="mobile-cta-bar">
+  <a href="tel:+12406107818" class="mob-call">📞 Call</a>
+  <a href="https://wa.me/12406107818" target="_blank" class="mob-call" style="background:#25D366;border-color:#25D366;color:#fff">💬 WhatsApp</a>
+  <a href="#contact" class="mob-quote">Get a Quote</a>
+</div>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60)
+});
+
+// Mobile nav
+function toggleMob(){document.getElementById('mobileNav').classList.toggle('open')}
+function closeMob(){document.getElementById('mobileNav').classList.remove('open')}
+
+// Reveal on scroll
+const revealEls=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+},{threshold:.1});
+revealEls.forEach(el=>obs.observe(el));
+
+// Bundle tabs
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.bundle-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Builder steps
+function toggleStep(id){
+  const el=document.getElementById(id);
+  el.classList.toggle('open');
+}
+
+// Option selection
+const selections={proteins:[],sides:[],starches:[],desserts:[]};
+function toggleOpt(el,cat){
+  const val=el.textContent;
+  const idx=selections[cat].indexOf(val);
+  if(idx>-1){selections[cat].splice(idx,1);el.classList.remove('selected')}
+  else{selections[cat].push(val);el.classList.add('selected')}
+  updateSummary();
+}
+
+function updateSummary(){
+  const all=[...selections.proteins,...selections.sides,...selections.starches,...selections.desserts];
+  const sum=document.getElementById('selectionSummary');
+  const txt=document.getElementById('summaryText');
+  if(all.length>0){
+    sum.classList.add('visible');
+    let html='<strong>Your selections so far:</strong><br>';
+    if(selections.proteins.length) html+='Proteins: '+selections.proteins.join(', ')+'<br>';
+    if(selections.sides.length) html+='Sides: '+selections.sides.join(', ')+'<br>';
+    if(selections.starches.length) html+='Starch: '+selections.starches.join(', ')+'<br>';
+    if(selections.desserts.length) html+='Desserts: '+selections.desserts.join(', ');
+    txt.innerHTML=html;
+  } else {sum.classList.remove('visible')}
+}
+
+function submitBundle(){
+  const name=document.getElementById('bundleName').value;
+  const phone=document.getElementById('bundlePhone').value;
+  const email=document.getElementById('bundleEmail').value;
+  const guests=document.getElementById('guestCount').value;
+  if(!name||!phone){alert('Please fill in your name and phone number.');return}
+  document.querySelector('.builder').style.display='none';
+  document.getElementById('bundleConfirm').style.display='block';
+}
+
+function submitContact(e){
+  e.preventDefault();
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('contactConfirm').style.display='block';
+}
+</script>
+</body>
+</html>
