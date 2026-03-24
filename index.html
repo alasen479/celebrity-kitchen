@@ -326,6 +326,57 @@ section{padding:96px 5%}
 .testi-name{font-size:13px;font-weight:500;color:var(--charcoal)}
 .testi-detail{font-size:11px;color:var(--warm-light);letter-spacing:.5px}
 
+/* ── FOOD MARQUEE ── */
+.marquee-wrap{background:var(--dark);overflow:hidden;padding:12px 0}
+.marquee-track{display:flex;gap:12px;animation:marqueeScroll 30s linear infinite;width:max-content}
+.marquee-track:hover{animation-play-state:paused}
+.mq-item{width:220px;height:160px;flex-shrink:0;overflow:hidden}
+.mq-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;filter:brightness(.88) saturate(1.1)}
+.mq-item:hover img{transform:scale(1.06);filter:brightness(1) saturate(1.2)}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@media(max-width:768px){.mq-item{width:160px;height:120px}.marquee-track{gap:8px}}
+
+/* ── FOOD FEATURE BANNER ── */
+.food-banner{position:relative;overflow:hidden;background:var(--dark)}
+.fb-img-row{display:grid;grid-template-columns:2fr 1fr;height:420px;gap:3px}
+.fb-img-col{display:grid;grid-template-rows:1fr 1fr;gap:3px}
+.fb-img{overflow:hidden}
+.fb-img img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.7) saturate(1.1);transition:transform .6s ease}
+.fb-img:hover img{transform:scale(1.04)}
+.fb-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(to top,rgba(24,22,15,.75) 0%,transparent 60%);padding:40px;text-align:center;pointer-events:none}
+.fb-overlay .btn-primary{pointer-events:all;margin-top:20px}
+.fb-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.fb-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);color:#FAF8F3;font-weight:600;line-height:1.1}
+@media(max-width:768px){
+  .fb-img-row{grid-template-columns:1fr;height:auto}
+  .fb-img-col{display:none}
+  .fb-img-lg{height:280px}
+  .fb-overlay{justify-content:flex-end;padding:28px 24px}
+}
+
+/* ── SNAP ROW ── */
+.snap-row{display:grid;grid-template-columns:1fr 2fr 1fr;height:280px;gap:3px;background:var(--dark)}
+.snap-item{overflow:hidden}
+.snap-item img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85) saturate(1.1);transition:transform .5s ease}
+.snap-item:hover img{transform:scale(1.05);filter:brightness(1) saturate(1.2)}
+@media(max-width:768px){
+  .snap-row{grid-template-columns:1fr 1fr;height:200px}
+  .snap-item-wide{display:none}
+}
+@media(max-width:480px){.snap-row{height:160px}}
+
+/* ── CINEMA STRIP ── */
+.cinema-strip{display:grid;grid-template-columns:repeat(4,1fr);height:200px;gap:3px;background:var(--dark)}
+.cs-img{overflow:hidden;position:relative}
+.cs-img img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.8) saturate(1.1);transition:all .5s ease}
+.cs-img:hover img{transform:scale(1.06);filter:brightness(1) saturate(1.25)}
+@media(max-width:768px){
+  .cinema-strip{grid-template-columns:repeat(2,1fr);height:180px}
+}
+@media(max-width:480px){
+  .cinema-strip{height:150px}
+}
+
 /* ── FOOD MOSAIC ── */
 .mosaic{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:240px 240px;gap:4px;background:var(--dark)}
 .mosaic-item{overflow:hidden;position:relative}
@@ -750,6 +801,29 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.15);padding:
   </div>
 </section>
 
+<!-- FOOD MARQUEE STRIP -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=400&q=80" alt="Food bowl"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&q=80" alt="Stew dish"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1544025162-d76538715b78?w=400&q=80" alt="Grilled meat platter"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&q=80" alt="Rice dish"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80" alt="Plated meal"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80" alt="Food spread"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" alt="Grilled skewers"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400&q=80" alt="Catering spread"></div>
+    <!-- duplicate for seamless loop -->
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=400&q=80" alt="Food bowl"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&q=80" alt="Stew dish"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1544025162-d76538715b78?w=400&q=80" alt="Grilled meat platter"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&q=80" alt="Rice dish"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80" alt="Plated meal"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80" alt="Food spread"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" alt="Grilled skewers"></div>
+    <div class="mq-item"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400&q=80" alt="Catering spread"></div>
+  </div>
+</div>
+
 <!-- CATERING FEATURE -->
 <div class="catering-feat reveal" id="catering">
   <div class="cf-grid">
@@ -1074,6 +1148,22 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.15);padding:
   </div>
 </section>
 
+<!-- FOOD FEATURE BANNER -->
+<div class="food-banner reveal">
+  <div class="fb-img-row">
+    <div class="fb-img fb-img-lg"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=900&q=85" alt="Cameroonian feast spread"></div>
+    <div class="fb-img-col">
+      <div class="fb-img fb-img-sm"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=85" alt="Grilled skewers"></div>
+      <div class="fb-img fb-img-sm"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500&q=85" alt="Brunch spread"></div>
+    </div>
+  </div>
+  <div class="fb-overlay">
+    <p class="fb-label">Authentic Cameroonian Cuisine</p>
+    <h3 class="fb-title">Every Dish Tells a Story.</h3>
+    <a href="#bundles" class="btn-primary">Order a Bundle</a>
+  </div>
+</div>
+
 <!-- AIRBNB -->
 <section class="airbnb reveal" id="airbnb">
   <div class="airbnb-grid">
@@ -1124,6 +1214,13 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.15);padding:
     </div>
   </div>
 </section>
+
+<!-- FOOD SNAP ROW -->
+<div class="snap-row">
+  <div class="snap-item"><img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=500&q=80" alt="Food bowl overhead"></div>
+  <div class="snap-item snap-item-wide"><img src="https://images.unsplash.com/photo-1544025162-d76538715b78?w=800&q=80" alt="Grilled meat platter"></div>
+  <div class="snap-item"><img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=500&q=80" alt="Cameroonian stew"></div>
+</div>
 
 <!-- COACHING -->
 <section class="coaching reveal" id="coaching">
@@ -1272,6 +1369,14 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.15);padding:
     </div>
   </div>
 </section>
+
+<!-- CINEMATIC FOOD STRIP -->
+<div class="cinema-strip">
+  <div class="cs-img"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Brunch spread"></div>
+  <div class="cs-img"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Food spread"></div>
+  <div class="cs-img"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&q=80" alt="Rice dish"></div>
+  <div class="cs-img"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&q=80" alt="Catering spread"></div>
+</div>
 
 <!-- TESTIMONIALS -->
 <section class="testimonials reveal" id="testimonials">
