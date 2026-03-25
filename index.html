@@ -195,8 +195,22 @@ section{padding:96px 5%}
 .bundle-card:hover .bc-cta::after{transform:translateX(4px)}
 
 /* Build Your Own */
-.byob-intro{max-width:640px;margin:0 auto 48px;text-align:center}
+.byob-intro{max-width:640px;margin:0 auto 24px;text-align:center}
 .byob-intro p{color:var(--warm-mid);font-size:15px;line-height:1.75}
+/* Live total bar */
+.byob-total-bar{background:var(--charcoal);border:1px solid rgba(201,168,76,.3);margin:0 auto 20px;max-width:800px;position:sticky;top:64px;z-index:10}
+.byob-total-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.byob-total-left,.byob-total-right{display:flex;flex-direction:column;gap:2px}
+.byob-total-right{align-items:flex-end}
+.byob-total-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(250,248,243,.35)}
+.byob-item-count{font-size:12px;color:rgba(250,248,243,.6)}
+.byob-total-price{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);font-weight:600;line-height:1}
+/* Option price labels */
+.opt em{display:block;font-style:normal;font-size:11px;color:var(--gold);margin-top:3px;letter-spacing:.5px;font-weight:500}
+.opt.selected em{color:var(--gold-dark)}
+/* Unavailable items */
+.opt-unavailable{opacity:.35;cursor:not-allowed !important;border-style:dashed !important;pointer-events:none}
+@media(max-width:768px){.byob-total-bar{top:64px;margin:0 0 16px}.byob-total-price{font-size:18px}.opt em{font-size:10px}}
 .builder{max-width:800px;margin:0 auto}
 .builder-step{background:var(--white);border:1px solid var(--border);margin-bottom:12px;overflow:hidden}
 .bs-header{display:flex;align-items:center;gap:16px;padding:20px 28px;cursor:pointer;transition:background .2s;user-select:none}
@@ -987,97 +1001,117 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.15);padding:
   <!-- BUILD YOUR OWN -->
   <div class="tab-panel" id="tab-custom">
     <div class="byob-intro">
-      <p>Pick exactly what you want — proteins, sides, starches, desserts, and more. Select your items below, fill in your event details, and we'll send you a custom quote within 24 hours.</p>
+      <p>Select exactly what you want from our full menu. Your running total updates live as you pick. Submit and we'll confirm within 24 hours.</p>
     </div>
+
+    <!-- LIVE TOTAL BAR -->
+    <div class="byob-total-bar" id="byobTotalBar">
+      <div class="byob-total-inner">
+        <div class="byob-total-left">
+          <span class="byob-total-label">Your Selection</span>
+          <span class="byob-item-count" id="byobItemCount">0 items</span>
+        </div>
+        <div class="byob-total-right">
+          <span class="byob-total-label">Estimated Total</span>
+          <span class="byob-total-price" id="byobTotalPrice">$0.00</span>
+        </div>
+      </div>
+    </div>
+
     <div class="builder">
 
+      <!-- STEP 1: MAINS -->
       <div class="builder-step open" id="bstep-1">
         <div class="bs-header" onclick="toggleStep('bstep-1')">
           <div class="bs-num">1</div>
-          <div class="bs-title">Choose Your Main(s) — select all that apply</div>
-          <div class="bs-arrow">▾</div>
+          <div class="bs-title">Mains — choose as many as you like</div>
+          <div class="bs-arrow">&#9662;</div>
         </div>
         <div class="bs-body">
           <div class="options-grid" id="proteins">
-            <span class="opt" onclick="toggleOpt(this,'proteins')">Soya Only — $24.99</span>
-            <span class="opt" onclick="toggleOpt(this,'proteins')">Goat Meat Pepper Soup — $24.99</span>
-            <span class="opt" onclick="toggleOpt(this,'proteins')">Grilled Tilapia with Ripe Plantains</span>
-            <span class="opt" onclick="toggleOpt(this,'proteins')">Grilled Chicken Wing & Drumstick — $15.89</span>
-            <span class="opt" onclick="toggleOpt(this,'proteins')">Spicy Turkey Wing — $12.89</span>
-            <span class="opt" onclick="toggleOpt(this,'proteins')">Spicy Turkey Thigh — $14.89</span>
-            <span class="opt" onclick="toggleOpt(this,'proteins')">Fried Croaker Fish (Piece) — $12.99</span>
-            <span class="opt" onclick="toggleOpt(this,'proteins')">Plain Tomato Stew — $10.99</span>
+            <span class="opt" data-price="24.99" onclick="toggleOpt(this,'proteins')">Soya Only <em>$24.99</em></span>
+            <span class="opt" data-price="24.99" onclick="toggleOpt(this,'proteins')">Goat Meat Pepper Soup <em>$24.99</em></span>
+            <span class="opt" data-price="24.89" onclick="toggleOpt(this,'proteins')">Full Plate of Jollof Rice <em>$24.89</em></span>
+            <span class="opt" data-price="15.89" onclick="toggleOpt(this,'proteins')">Grilled Chicken Wing &amp; Drumstick <em>$15.89</em></span>
+            <span class="opt" data-price="15.89" onclick="toggleOpt(this,'proteins')">Indomie <em>$15.89</em></span>
+            <span class="opt" data-price="14.89" onclick="toggleOpt(this,'proteins')">Spicy Turkey Thigh <em>$14.89</em></span>
+            <span class="opt" data-price="12.99" onclick="toggleOpt(this,'proteins')">Fried Croaker Fish (Piece) <em>$12.99</em></span>
+            <span class="opt" data-price="12.89" onclick="toggleOpt(this,'proteins')">Spicy Turkey Wing <em>$12.89</em></span>
+            <span class="opt" data-price="10.99" onclick="toggleOpt(this,'proteins')">Plain Tomato Stew <em>$10.99</em></span>
+            <span class="opt opt-unavailable">Grilled Tilapia w/ Ripe Plantains <em>Unavailable today</em></span>
           </div>
         </div>
       </div>
 
+      <!-- STEP 2: SIDES & RICE -->
       <div class="builder-step" id="bstep-2">
         <div class="bs-header" onclick="toggleStep('bstep-2')">
           <div class="bs-num">2</div>
-          <div class="bs-title">Choose Your Sides & Add-Ons</div>
-          <div class="bs-arrow">▾</div>
+          <div class="bs-title">Sides &amp; Rice — pick your accompaniments</div>
+          <div class="bs-arrow">&#9662;</div>
         </div>
         <div class="bs-body">
           <div class="options-grid" id="sides">
-            <span class="opt" onclick="toggleOpt(this,'sides')">Side of Fried Plantains — $13.89</span>
-            <span class="opt" onclick="toggleOpt(this,'sides')">Side of Sautéed Collard Greens — $8.89</span>
-            <span class="opt" onclick="toggleOpt(this,'sides')">Indomie — $15.89</span>
-            <span class="opt" onclick="toggleOpt(this,'sides')">Homemade Yogurt — $9.99</span>
-            <span class="opt" onclick="toggleOpt(this,'sides')">Hot Sauce (Cameroon Pepper) 8oz — $14.99</span>
+            <span class="opt" data-price="13.89" onclick="toggleOpt(this,'sides')">Side of Jollof Rice <em>$13.89</em></span>
+            <span class="opt" data-price="13.89" onclick="toggleOpt(this,'sides')">Side of Fried Plantains <em>$13.89</em></span>
+            <span class="opt" data-price="9.99" onclick="toggleOpt(this,'sides')">White Basmati Rice <em>$9.99</em></span>
+            <span class="opt" data-price="8.89" onclick="toggleOpt(this,'sides')">Sauteed Collard Greens <em>$8.89</em></span>
           </div>
         </div>
       </div>
 
+      <!-- STEP 3: DRINKS -->
       <div class="builder-step" id="bstep-3">
         <div class="bs-header" onclick="toggleStep('bstep-3')">
           <div class="bs-num">3</div>
-          <div class="bs-title">Choose Your Rice / Base</div>
-          <div class="bs-arrow">▾</div>
+          <div class="bs-title">Drinks — optional</div>
+          <div class="bs-arrow">&#9662;</div>
         </div>
         <div class="bs-body">
           <div class="options-grid" id="starches">
-            <span class="opt" onclick="toggleOpt(this,'starches')">Full Plate of Jollof Rice — $24.89</span>
-            <span class="opt" onclick="toggleOpt(this,'starches')">Side of Jollof Rice — $13.89</span>
-            <span class="opt" onclick="toggleOpt(this,'starches')">White Basmati Rice — $9.99</span>
+            <span class="opt" data-price="1.99" onclick="toggleOpt(this,'starches')">Water <em>$1.99</em></span>
+            <span class="opt" data-price="2.99" onclick="toggleOpt(this,'starches')">Original Coca-Cola <em>$2.99</em></span>
+            <span class="opt" data-price="2.99" onclick="toggleOpt(this,'starches')">Ginger Ale <em>$2.99</em></span>
+            <span class="opt" data-price="2.99" onclick="toggleOpt(this,'starches')">Diet Coke <em>$2.99</em></span>
+            <span class="opt" data-price="3.99" onclick="toggleOpt(this,'starches')">Tropicana Cranberry Juice <em>$3.99</em></span>
           </div>
         </div>
       </div>
 
+      <!-- STEP 4: EXTRAS -->
       <div class="builder-step" id="bstep-4">
         <div class="bs-header" onclick="toggleStep('bstep-4')">
           <div class="bs-num">4</div>
-          <div class="bs-title">Add Drinks — optional</div>
-          <div class="bs-arrow">▾</div>
+          <div class="bs-title">Extras &amp; Add-Ons — optional</div>
+          <div class="bs-arrow">&#9662;</div>
         </div>
         <div class="bs-body">
           <div class="options-grid" id="desserts">
-            <span class="opt" onclick="toggleOpt(this,'desserts')">Water — $1.99</span>
-            <span class="opt" onclick="toggleOpt(this,'desserts')">Original Coca-Cola — $2.99</span>
-            <span class="opt" onclick="toggleOpt(this,'desserts')">Ginger Ale — $2.99</span>
-            <span class="opt" onclick="toggleOpt(this,'desserts')">Diet Coke — $2.99</span>
-            <span class="opt" onclick="toggleOpt(this,'desserts')">Tropicana Cranberry Juice — $3.99</span>
-            <span class="opt" onclick="toggleOpt(this,'desserts')">Homemade Yogurt — $9.99</span>
+            <span class="opt" data-price="14.99" onclick="toggleOpt(this,'desserts')">Hot Sauce — Cameroon Pepper 8oz <em>$14.99</em></span>
+            <span class="opt" data-price="9.99" onclick="toggleOpt(this,'desserts')">Homemade Yogurt <em>$9.99</em></span>
           </div>
         </div>
       </div>
 
+      <!-- STEP 5: ORDER DETAILS -->
       <div class="builder-step" id="bstep-5">
         <div class="bs-header" onclick="toggleStep('bstep-5')">
           <div class="bs-num">5</div>
-          <div class="bs-title">Event Details & Serving Size</div>
-          <div class="bs-arrow">▾</div>
+          <div class="bs-title">Order Details</div>
+          <div class="bs-arrow">&#9662;</div>
         </div>
         <div class="bs-body">
           <div class="builder-event">
             <div class="two-fields">
               <div>
-                <label>Guest Count / Serving Size</label>
-                <input type="number" id="guestCount" placeholder="e.g. 12" min="1">
+                <label>Number of People</label>
+                <input type="number" id="guestCount" placeholder="e.g. 4" min="1" oninput="updateTotal()">
               </div>
               <div>
-                <label>Event Type</label>
+                <label>Order Type</label>
                 <select id="eventType">
-                  <option value="">Select event type</option>
+                  <option value="">Select type</option>
+                  <option>Personal / Family Meal</option>
                   <option>Birthday Party</option>
                   <option>Baby Shower</option>
                   <option>Wedding / Reception</option>
@@ -1085,39 +1119,37 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.15);padding:
                   <option>Church Event</option>
                   <option>Repast</option>
                   <option>Corporate Event</option>
-                  <option>Family Gathering</option>
                   <option>Weekly Meal Prep</option>
                   <option>Airbnb Guest Meal</option>
+                  <option>Pickup</option>
+                  <option>Delivery</option>
                   <option>Other</option>
                 </select>
               </div>
             </div>
-            <label>Dietary Restrictions or Special Requests</label>
-            <textarea id="dietary" placeholder="e.g. No pork, vegetarian options needed, nut allergy, etc."></textarea>
+            <label>Special Requests / Dietary Notes</label>
+            <textarea id="dietary" placeholder="e.g. Extra spicy, no onions, halal only, allergy info..."></textarea>
           </div>
         </div>
       </div>
 
-      <div class="selection-summary" id="selectionSummary">
-        <p id="summaryText"></p>
-      </div>
-
+      <!-- STEP 6: CONTACT -->
       <div class="builder-step" id="bstep-6">
         <div class="bs-header" onclick="toggleStep('bstep-6')">
           <div class="bs-num">6</div>
           <div class="bs-title">Your Contact Information</div>
-          <div class="bs-arrow">▾</div>
+          <div class="bs-arrow">&#9662;</div>
         </div>
         <div class="bs-body">
           <div class="builder-event">
             <div class="two-fields">
               <div>
                 <label>Full Name</label>
-                <input type="text" id="bundleName" placeholder="Your full name">
+                <input type="text" id="bundleName" placeholder="Your name">
               </div>
               <div>
                 <label>Phone Number</label>
-                <input type="tel" id="bundlePhone" placeholder="(214) 000-0000">
+                <input type="tel" id="bundlePhone" placeholder="(240) 000-0000">
               </div>
             </div>
             <label>Email Address</label>
@@ -1126,13 +1158,18 @@ footer{background:var(--dark);border-top:1px solid rgba(201,168,76,.15);padding:
         </div>
       </div>
 
+      <!-- LIVE SUMMARY -->
+      <div class="selection-summary" id="selectionSummary">
+        <p id="summaryText"></p>
+      </div>
+
       <div class="builder-submit">
-        <button onclick="submitBundle()" class="btn-primary" style="cursor:pointer;border:none;font-size:13px;padding:16px 48px">Submit My Bundle Request →</button>
-        <p class="note">Your custom quote will be sent within 24 hours. Pricing is based on your selections, guest count, and serving format.</p>
+        <button onclick="submitBundle()" class="btn-primary" style="cursor:pointer;border:none;font-size:13px;padding:16px 48px">Submit My Order Request &#8594;</button>
+        <p class="note">We'll confirm your order and total within 24 hours — often the same day.</p>
       </div>
       <div id="bundleConfirm" style="display:none;text-align:center;padding:28px;background:var(--gold-pale);border:1px solid var(--gold-light);margin-top:20px">
-        <p style="font-family:'Playfair Display',serif;font-size:20px;color:var(--charcoal);margin-bottom:8px">✓ Bundle Request Received!</p>
-        <p style="font-size:14px;color:var(--warm-mid)">Thank you! We'll review your selections and send your custom quote within 24 hours.</p>
+        <p style="font-family:'Playfair Display',serif;font-size:20px;color:var(--charcoal);margin-bottom:8px">&#10003; Order Request Received!</p>
+        <p style="font-size:14px;color:var(--warm-mid)">Thank you! We'll review your selections and be in touch within 24 hours to confirm.</p>
       </div>
     </div>
   </div>
@@ -1687,39 +1724,68 @@ function toggleStep(id){
   el.classList.toggle('open');
 }
 
-// Option selection
+// Option selection with live price tracking
 const selections={proteins:[],sides:[],starches:[],desserts:[]};
+const selectionPrices={proteins:{},sides:{},starches:{},desserts:{}};
+
 function toggleOpt(el,cat){
-  const val=el.textContent;
+  if(el.classList.contains('opt-unavailable')) return;
+  const val=el.textContent.trim();
+  const price=parseFloat(el.dataset.price||0);
   const idx=selections[cat].indexOf(val);
-  if(idx>-1){selections[cat].splice(idx,1);el.classList.remove('selected')}
-  else{selections[cat].push(val);el.classList.add('selected')}
+  if(idx>-1){
+    selections[cat].splice(idx,1);
+    delete selectionPrices[cat][val];
+    el.classList.remove('selected');
+  } else {
+    selections[cat].push(val);
+    selectionPrices[cat][val]=price;
+    el.classList.add('selected');
+  }
   updateSummary();
+  updateTotal();
+}
+
+function updateTotal(){
+  let total=0;
+  let count=0;
+  Object.values(selectionPrices).forEach(catPrices=>{
+    Object.values(catPrices).forEach(p=>{total+=p;count++;});
+  });
+  const qty=parseInt(document.getElementById('guestCount')?.value)||1;
+  const el=document.getElementById('byobTotalPrice');
+  const countEl=document.getElementById('byobItemCount');
+  if(el) el.textContent='$'+total.toFixed(2);
+  if(countEl) countEl.textContent=count+(count===1?' item':' items')+' selected';
 }
 
 function updateSummary(){
   const all=[...selections.proteins,...selections.sides,...selections.starches,...selections.desserts];
   const sum=document.getElementById('selectionSummary');
   const txt=document.getElementById('summaryText');
+  if(!sum||!txt) return;
   if(all.length>0){
     sum.classList.add('visible');
-    let html='<strong>Your selections so far:</strong><br>';
-    if(selections.proteins.length) html+='Proteins: '+selections.proteins.join(', ')+'<br>';
-    if(selections.sides.length) html+='Sides: '+selections.sides.join(', ')+'<br>';
-    if(selections.starches.length) html+='Starch: '+selections.starches.join(', ')+'<br>';
-    if(selections.desserts.length) html+='Desserts: '+selections.desserts.join(', ');
+    let html='<strong>Your order so far:</strong><br>';
+    if(selections.proteins.length) html+='Mains: '+selections.proteins.map(i=>i.split('$')[0].trim()).join(', ')+'<br>';
+    if(selections.sides.length) html+='Sides: '+selections.sides.map(i=>i.split('$')[0].trim()).join(', ')+'<br>';
+    if(selections.starches.length) html+='Drinks: '+selections.starches.map(i=>i.split('$')[0].trim()).join(', ')+'<br>';
+    if(selections.desserts.length) html+='Extras: '+selections.desserts.map(i=>i.split('$')[0].trim()).join(', ');
     txt.innerHTML=html;
-  } else {sum.classList.remove('visible')}
+  } else {
+    sum.classList.remove('visible');
+  }
 }
 
 function submitBundle(){
-  const name=document.getElementById('bundleName').value;
-  const phone=document.getElementById('bundlePhone').value;
-  const email=document.getElementById('bundleEmail').value;
-  const guests=document.getElementById('guestCount').value;
-  if(!name||!phone){alert('Please fill in your name and phone number.');return}
+  const name=document.getElementById('bundleName').value.trim();
+  const phone=document.getElementById('bundlePhone').value.trim();
+  if(!name||!phone){alert('Please enter your name and phone number.');return}
+  const total=document.getElementById('byobTotalPrice')?.textContent||'TBD';
   document.querySelector('.builder').style.display='none';
   document.getElementById('bundleConfirm').style.display='block';
+  document.getElementById('bundleConfirm').querySelector('p:last-child').textContent=
+    'Thank you '+name+'! Your order (estimated '+total+') has been received. We\'ll be in touch within 24 hours to confirm.';
 }
 
 // ── COACHING CALENDAR ──
